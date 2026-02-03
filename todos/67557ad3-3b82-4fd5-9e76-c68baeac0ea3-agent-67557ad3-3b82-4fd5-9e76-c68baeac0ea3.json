@@ -1,0 +1,32 @@
+[
+  {
+    "content": "FASE 1: Pulizia Sistema - Eliminare directory duplicate",
+    "status": "completed",
+    "activeForm": "Eliminando directory duplicate"
+  },
+  {
+    "content": "FASE 2: Creare skills/orchestrator/SKILL.md e decomposer.md",
+    "status": "completed",
+    "activeForm": "Creando entry point e decomposer"
+  },
+  {
+    "content": "FASE 3: Creare skills/orchestrator/wave-executor.md",
+    "status": "completed",
+    "activeForm": "Creando wave executor"
+  },
+  {
+    "content": "FASE 4: Creare skills/orchestrator/expert-injector.md",
+    "status": "completed",
+    "activeForm": "Creando expert injector"
+  },
+  {
+    "content": "FASE 5: Aggiornare hook auto-orchestrate.md con logica reale",
+    "status": "in_progress",
+    "activeForm": "Aggiornando hook principale"
+  },
+  {
+    "content": "FASE 6: Test end-to-end del sistema",
+    "status": "pending",
+    "activeForm": "Testando sistema completo"
+  }
+]

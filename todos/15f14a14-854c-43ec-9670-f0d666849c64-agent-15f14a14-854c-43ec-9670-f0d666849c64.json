@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Check .mcp.json configuration",
+    "status": "completed",
+    "activeForm": "Checked .mcp.json configuration"
+  },
+  {
+    "content": "Check UV/UVX installation status",
+    "status": "in_progress",
+    "activeForm": "Checking UV/UVX installation"
+  },
+  {
+    "content": "Create .mcp.json configuration",
+    "status": "pending",
+    "activeForm": "Creating .mcp.json"
+  },
+  {
+    "content": "Create mcp_server/ folder structure",
+    "status": "pending",
+    "activeForm": "Creating mcp_server folder"
+  },
+  {
+    "content": "Create skills/ folder structure",
+    "status": "pending",
+    "activeForm": "Creating skills folder"
+  }
+]

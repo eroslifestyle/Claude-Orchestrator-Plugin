@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Analyze the project structure and identify all files",
+    "status": "completed",
+    "activeForm": "Analyzing the project structure and identifying all files"
+  },
+  {
+    "content": "Identify obsolete and unnecessary files",
+    "status": "completed",
+    "activeForm": "Identifying obsolete and unnecessary files"
+  },
+  {
+    "content": "Clean up identified files safely",
+    "status": "in_progress",
+    "activeForm": "Cleaning up identified files safely"
+  },
+  {
+    "content": "Organize remaining files properly",
+    "status": "pending",
+    "activeForm": "Organizing remaining files properly"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Disinstallare estensione VS Code claude-zai-router",
+    "status": "in_progress",
+    "activeForm": "Disinstallando estensione VS Code"
+  },
+  {
+    "content": "Ripristinare ~/.claude/settings.json originale",
+    "status": "completed",
+    "activeForm": "Ripristinando settings.json"
+  },
+  {
+    "content": "Rimuovere task avvio automatico Windows",
+    "status": "completed",
+    "activeForm": "Rimuovendo task Windows"
+  },
+  {
+    "content": "Verificare che tutto sia ripristinato",
+    "status": "pending",
+    "activeForm": "Verificando ripristino"
+  }
+]

@@ -1,0 +1,719 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-01-31",
+  "description": "Agent Registry per sistema di routing automatico degli Expert Agents",
+
+  "agents": {
+    "architect_expert": {
+      "id": "architect_expert",
+      "name": "Software Architecture Principal Engineer",
+      "file_path": "~/.claude/agents/experts/architect_expert.md",
+      "version": "1.0",
+      "model_default": "sonnet",
+      "experience_years": "15+",
+      "status": "active",
+      "priority_level": 9,
+
+      "capabilities": [
+        "system_design",
+        "distributed_systems",
+        "microservices_architecture",
+        "event_driven_architecture",
+        "domain_driven_design",
+        "bounded_contexts",
+        "cqrs_pattern",
+        "event_sourcing",
+        "api_design",
+        "scalability_planning",
+        "performance_architecture",
+        "trade_offs_analysis",
+        "blueprints_creation",
+        "technical_specifications"
+      ],
+
+      "keywords": [
+        "architettura", "architecture", "design", "sistema", "system",
+        "microservizi", "microservices", "distribuite", "distributed",
+        "scalabilità", "scalability", "pattern", "blueprint", "schema",
+        "ddd", "domain", "bounded context", "event sourcing", "cqrs",
+        "api design", "trade-off", "specifiche tecniche", "specifications"
+      ],
+
+      "domain_expertise": {
+        "primary": ["system_architecture", "design_patterns", "distributed_systems"],
+        "secondary": ["performance_optimization", "api_design", "documentation"],
+        "tools": ["uml", "c4_model", "event_storming", "architecture_diagrams"]
+      },
+
+      "integration_points": ["security_unified_expert", "devops_expert", "database_expert"],
+      "fallback_agents": ["languages_expert", "integration_expert"],
+
+      "availability": {
+        "status": "always_available",
+        "health_check": "file_exists",
+        "last_health_check": "2026-01-31T10:00:00Z"
+      }
+    },
+
+    "security_unified_expert": {
+      "id": "security_unified_expert",
+      "name": "Security Architect & Defense Engineer",
+      "file_path": "~/.claude/agents/experts/security_unified_expert.md",
+      "version": "1.0",
+      "model_default": "sonnet",
+      "experience_years": "20+",
+      "status": "active",
+      "priority_level": 10,
+
+      "capabilities": [
+        "application_security",
+        "encryption_cryptography",
+        "identity_access_management",
+        "oauth_mfa_rbac",
+        "input_validation",
+        "injection_prevention",
+        "api_security",
+        "rate_limiting",
+        "token_validation",
+        "security_audit",
+        "threat_modeling",
+        "compliance",
+        "detection_rules",
+        "incident_response",
+        "forensics",
+        "privacy_compliance",
+        "audit_logging",
+        "secure_deployment"
+      ],
+
+      "keywords": [
+        "security", "sicurezza", "encryption", "crittografia", "auth",
+        "autenticazione", "authorization", "autorizzazione", "oauth",
+        "jwt", "token", "rbac", "mfa", "vulnerability", "vulnerabilità",
+        "injection", "xss", "csrf", "ssl", "tls", "firewall",
+        "audit", "compliance", "gdpr", "ccpa", "privacy",
+        "incident", "forensics", "threat", "penetration", "pentest"
+      ],
+
+      "domain_expertise": {
+        "primary": ["application_security", "identity_management", "compliance"],
+        "secondary": ["network_security", "incident_response", "forensics"],
+        "tools": ["owasp", "burp_suite", "nessus", "metasploit", "wireshark"]
+      },
+
+      "integration_points": ["architect_expert", "devops_expert", "database_expert"],
+      "fallback_agents": ["devops_expert", "integration_expert"],
+
+      "availability": {
+        "status": "always_available",
+        "health_check": "file_exists",
+        "last_health_check": "2026-01-31T10:00:00Z"
+      }
+    },
+
+    "devops_expert": {
+      "id": "devops_expert",
+      "name": "DevOps & SRE Architect",
+      "file_path": "~/.claude/agents/experts/devops_expert.md",
+      "version": "1.0",
+      "model_default": "sonnet",
+      "experience_years": "12+",
+      "status": "active",
+      "priority_level": 8,
+
+      "capabilities": [
+        "infrastructure_as_code",
+        "terraform",
+        "ansible",
+        "kubernetes",
+        "docker",
+        "ci_cd_pipelines",
+        "monitoring_observability",
+        "logging",
+        "metrics_collection",
+        "alerting",
+        "cloud_architecture",
+        "aws_azure_gcp",
+        "automation",
+        "deployment_strategies",
+        "reliability_engineering",
+        "performance_monitoring",
+        "disaster_recovery",
+        "backup_strategies"
+      ],
+
+      "keywords": [
+        "devops", "sre", "terraform", "kubernetes", "docker", "ansible",
+        "ci/cd", "pipeline", "deployment", "deploy", "monitoring",
+        "observability", "metrics", "logging", "alerting", "prometheus",
+        "grafana", "elk", "jenkins", "github actions", "gitlab ci",
+        "cloud", "aws", "azure", "gcp", "infrastructure", "iac",
+        "automation", "scaling", "reliability", "backup", "disaster recovery"
+      ],
+
+      "domain_expertise": {
+        "primary": ["infrastructure_automation", "monitoring", "deployment"],
+        "secondary": ["cloud_platforms", "container_orchestration", "reliability"],
+        "tools": ["terraform", "kubernetes", "docker", "ansible", "prometheus", "grafana"]
+      },
+
+      "integration_points": ["security_unified_expert", "architect_expert", "database_expert"],
+      "fallback_agents": ["languages_expert", "database_expert"],
+
+      "availability": {
+        "status": "always_available",
+        "health_check": "file_exists",
+        "last_health_check": "2026-01-31T10:00:00Z"
+      }
+    },
+
+    "database_expert": {
+      "id": "database_expert",
+      "name": "Database Architect & Data Engineer",
+      "file_path": "~/.claude/agents/experts/database_expert.md",
+      "version": "2.0",
+      "model_default": "sonnet",
+      "experience_years": "22+",
+      "status": "active",
+      "priority_level": 7,
+
+      "capabilities": [
+        "database_design",
+        "data_modeling",
+        "sql_optimization",
+        "nosql_design",
+        "performance_tuning",
+        "indexing_strategies",
+        "replication",
+        "sharding",
+        "backup_recovery",
+        "migration_strategies",
+        "postgresql_mysql",
+        "mongodb_redis",
+        "elasticsearch",
+        "data_warehousing",
+        "etl_processes",
+        "data_governance"
+      ],
+
+      "keywords": [
+        "database", "db", "sql", "nosql", "postgresql", "mysql",
+        "mongodb", "redis", "elasticsearch", "data", "dati",
+        "query", "optimization", "performance", "index", "indexing",
+        "replication", "sharding", "backup", "recovery", "migration",
+        "etl", "data warehouse", "oltp", "olap", "acid", "transactions"
+      ],
+
+      "domain_expertise": {
+        "primary": ["database_design", "performance_optimization", "data_modeling"],
+        "secondary": ["data_migration", "backup_strategies", "data_governance"],
+        "tools": ["postgresql", "mysql", "mongodb", "redis", "elasticsearch"]
+      },
+
+      "integration_points": ["architect_expert", "security_unified_expert", "devops_expert"],
+      "fallback_agents": ["languages_expert", "devops_expert"],
+
+      "availability": {
+        "status": "always_available",
+        "health_check": "file_exists",
+        "last_health_check": "2026-01-31T10:00:00Z"
+      }
+    },
+
+    "tester_expert": {
+      "id": "tester_expert",
+      "name": "Quality Assurance Architect & Performance Specialist",
+      "file_path": "~/.claude/agents/experts/tester_expert.md",
+      "version": "2.0",
+      "model_default": "sonnet",
+      "experience_years": "22+",
+      "status": "active",
+      "priority_level": 6,
+
+      "capabilities": [
+        "rapid_testing",
+        "performance_profiling",
+        "bug_detection",
+        "critical_issue_resolution",
+        "test_automation",
+        "load_testing",
+        "stress_testing",
+        "unit_testing",
+        "integration_testing",
+        "regression_testing",
+        "test_strategy",
+        "quality_metrics",
+        "defect_analysis",
+        "performance_monitoring"
+      ],
+
+      "keywords": [
+        "test", "testing", "bug", "defect", "quality", "qa",
+        "performance", "profiling", "load", "stress", "unit test",
+        "integration test", "automation", "selenium", "jest",
+        "pytest", "junit", "coverage", "regression", "ci test",
+        "benchmark", "monitoring", "debug", "troubleshooting"
+      ],
+
+      "domain_expertise": {
+        "primary": ["rapid_testing", "performance_analysis", "bug_resolution"],
+        "secondary": ["test_automation", "quality_metrics", "regression_testing"],
+        "tools": ["selenium", "jest", "pytest", "junit", "jmeter", "k6"]
+      },
+
+      "integration_points": ["languages_expert", "devops_expert", "database_expert"],
+      "fallback_agents": ["languages_expert", "devops_expert"],
+
+      "availability": {
+        "status": "on_demand",
+        "health_check": "file_exists",
+        "activation_condition": "critical_bugs_only",
+        "last_health_check": "2026-01-31T10:00:00Z"
+      }
+    },
+
+    "languages_expert": {
+      "id": "languages_expert",
+      "name": "Programming Languages Polyglot",
+      "file_path": "~/.claude/agents/experts/languages_expert.md",
+      "version": "2.0",
+      "model_default": "sonnet",
+      "experience_years": "20+",
+      "status": "active",
+      "priority_level": 5,
+
+      "capabilities": [
+        "idiomatic_implementations",
+        "syntax_consulting",
+        "performance_optimization",
+        "language_specific_bugs",
+        "template_creation",
+        "convention_validation",
+        "code_review",
+        "best_practices",
+        "refactoring",
+        "algorithm_optimization",
+        "memory_management",
+        "async_programming",
+        "concurrent_programming"
+      ],
+
+      "keywords": [
+        "python", "javascript", "typescript", "java", "c++", "c#",
+        "go", "rust", "php", "ruby", "kotlin", "swift", "scala",
+        "syntax", "idiomatic", "best practices", "convention",
+        "refactor", "optimization", "algorithm", "performance",
+        "async", "concurrency", "memory", "template", "boilerplate",
+        "code review", "clean code"
+      ],
+
+      "domain_expertise": {
+        "primary": ["syntax_mastery", "idiomatic_code", "performance_optimization"],
+        "secondary": ["code_review", "refactoring", "best_practices"],
+        "tools": ["eslint", "prettier", "pylint", "sonarqube", "codecov"]
+      },
+
+      "integration_points": ["architect_expert", "tester_expert", "integration_expert"],
+      "fallback_agents": ["architect_expert", "integration_expert"],
+
+      "availability": {
+        "status": "always_available",
+        "health_check": "file_exists",
+        "last_health_check": "2026-01-31T10:00:00Z"
+      }
+    },
+
+    "integration_expert": {
+      "id": "integration_expert",
+      "name": "API Integration & Communication Specialist",
+      "file_path": "~/.claude/agents/experts/integration_expert.md",
+      "version": "1.0",
+      "model_default": "sonnet",
+      "experience_years": "25+",
+      "status": "active",
+      "priority_level": 7,
+
+      "capabilities": [
+        "api_integration",
+        "telegram_bot_api",
+        "whatsapp_integration",
+        "metatrader_integration",
+        "ctrader_integration",
+        "tradingview_webhooks",
+        "gateway_architecture",
+        "protocol_handling",
+        "rate_limiting",
+        "reconnection_strategies",
+        "webhook_processing",
+        "real_time_communication",
+        "message_queuing",
+        "api_security"
+      ],
+
+      "keywords": [
+        "api", "integration", "telegram", "whatsapp", "webhook",
+        "metatrader", "mt4", "mt5", "ctrader", "tradingview",
+        "rest", "graphql", "websocket", "grpc", "messaging",
+        "queue", "broker", "gateway", "protocol", "oauth",
+        "rate limit", "retry", "reconnection", "real-time",
+        "streaming", "notification", "bot", "automation"
+      ],
+
+      "domain_expertise": {
+        "primary": ["api_integration", "messaging_platforms", "trading_platforms"],
+        "secondary": ["real_time_communication", "webhook_processing", "gateway_design"],
+        "tools": ["postman", "swagger", "telegram_api", "mt4_api", "websocket"]
+      },
+
+      "integration_points": ["security_unified_expert", "architect_expert", "languages_expert"],
+      "fallback_agents": ["languages_expert", "devops_expert"],
+
+      "availability": {
+        "status": "always_available",
+        "health_check": "file_exists",
+        "last_health_check": "2026-01-31T10:00:00Z"
+      }
+    },
+
+    "ai_integration_expert": {
+      "id": "ai_integration_expert",
+      "name": "AI Integration & Implementation Specialist",
+      "file_path": "~/.claude/agents/experts/ai_integration_expert.md",
+      "version": "1.0",
+      "model_default": "sonnet",
+      "experience_years": "8+",
+      "status": "active",
+      "priority_level": 6,
+
+      "capabilities": [
+        "ai_model_integration",
+        "machine_learning_implementation",
+        "data_science_bridge",
+        "model_optimization",
+        "ai_feature_development",
+        "llm_integration",
+        "natural_language_processing",
+        "computer_vision",
+        "recommendation_systems",
+        "predictive_analytics",
+        "ai_pipeline_design",
+        "model_deployment",
+        "ai_monitoring"
+      ],
+
+      "keywords": [
+        "ai", "machine learning", "ml", "artificial intelligence",
+        "model", "llm", "nlp", "computer vision", "cv",
+        "tensorflow", "pytorch", "scikit-learn", "openai",
+        "gpt", "claude", "huggingface", "transformers",
+        "prediction", "recommendation", "classification",
+        "regression", "clustering", "neural network",
+        "deep learning", "feature engineering", "data science"
+      ],
+
+      "domain_expertise": {
+        "primary": ["ai_integration", "model_implementation", "feature_engineering"],
+        "secondary": ["model_optimization", "ai_monitoring", "data_pipeline"],
+        "tools": ["tensorflow", "pytorch", "scikit-learn", "openai_api", "huggingface"]
+      },
+
+      "integration_points": ["languages_expert", "database_expert", "integration_expert"],
+      "fallback_agents": ["languages_expert", "database_expert"],
+
+      "availability": {
+        "status": "always_available",
+        "health_check": "file_exists",
+        "last_health_check": "2026-01-31T10:00:00Z"
+      }
+    },
+
+    "mobile_expert": {
+      "id": "mobile_expert",
+      "name": "Mobile Development Architect",
+      "file_path": "~/.claude/agents/experts/mobile_expert.md",
+      "version": "1.0",
+      "model_default": "sonnet",
+      "experience_years": "22+",
+      "status": "active",
+      "priority_level": 6,
+
+      "capabilities": [
+        "ios_development",
+        "android_development",
+        "react_native",
+        "flutter",
+        "native_performance",
+        "cross_platform",
+        "mobile_ui_ux",
+        "app_store_optimization",
+        "mobile_security",
+        "offline_capabilities",
+        "push_notifications",
+        "mobile_analytics",
+        "device_integration",
+        "mobile_testing"
+      ],
+
+      "keywords": [
+        "mobile", "ios", "android", "react native", "flutter",
+        "swift", "kotlin", "objective-c", "java", "dart",
+        "app store", "play store", "xcode", "android studio",
+        "native", "hybrid", "cross-platform", "responsive",
+        "touch", "gesture", "notification", "offline",
+        "sqlite", "core data", "realm", "firebase"
+      ],
+
+      "domain_expertise": {
+        "primary": ["ios_development", "android_development", "cross_platform"],
+        "secondary": ["mobile_performance", "app_store_deployment", "mobile_security"],
+        "tools": ["xcode", "android_studio", "react_native", "flutter", "firebase"]
+      },
+
+      "integration_points": ["gui_super_expert", "security_unified_expert", "languages_expert"],
+      "fallback_agents": ["languages_expert", "gui_super_expert"],
+
+      "availability": {
+        "status": "always_available",
+        "health_check": "file_exists",
+        "last_health_check": "2026-01-31T10:00:00Z"
+      }
+    },
+
+    "gui_super_expert": {
+      "id": "gui_super_expert",
+      "name": "GUI/UX Design Systems Expert",
+      "file_path": "~/.claude/agents/experts/gui-super-expert.md",
+      "version": "1.0",
+      "model_default": "sonnet",
+      "experience_years": "25+",
+      "status": "active",
+      "priority_level": 5,
+
+      "capabilities": [
+        "ui_ux_design",
+        "design_systems",
+        "micro_interactions",
+        "accessibility",
+        "performance_ui",
+        "responsive_design",
+        "component_libraries",
+        "user_experience",
+        "interface_optimization",
+        "visual_design",
+        "prototyping",
+        "user_research",
+        "design_tokens",
+        "atomic_design"
+      ],
+
+      "keywords": [
+        "ui", "ux", "design", "interface", "user experience",
+        "accessibility", "responsive", "mobile-first", "desktop",
+        "component", "library", "figma", "sketch", "adobe xd",
+        "css", "sass", "less", "styled-components", "emotion",
+        "material design", "human interface", "bootstrap",
+        "tailwind", "animation", "transition", "micro-interaction"
+      ],
+
+      "domain_expertise": {
+        "primary": ["ui_design", "design_systems", "accessibility"],
+        "secondary": ["user_research", "prototyping", "performance_ui"],
+        "tools": ["figma", "sketch", "adobe_xd", "principle", "framer"]
+      },
+
+      "integration_points": ["mobile_expert", "languages_expert", "tester_expert"],
+      "fallback_agents": ["mobile_expert", "languages_expert"],
+
+      "availability": {
+        "status": "always_available",
+        "health_check": "file_exists",
+        "last_health_check": "2026-01-31T10:00:00Z"
+      }
+    }
+  },
+
+  "routing": {
+    "keyword_mappings": {
+      "architecture_design": ["architect_expert"],
+      "security_compliance": ["security_unified_expert"],
+      "infrastructure_deployment": ["devops_expert"],
+      "database_optimization": ["database_expert"],
+      "testing_debugging": ["tester_expert"],
+      "code_implementation": ["languages_expert"],
+      "api_integration": ["integration_expert"],
+      "ai_ml_implementation": ["ai_integration_expert"],
+      "mobile_development": ["mobile_expert"],
+      "ui_ux_design": ["gui_super_expert"]
+    },
+
+    "priority_routing": {
+      "critical_security": ["security_unified_expert", "architect_expert"],
+      "performance_issues": ["tester_expert", "database_expert", "devops_expert"],
+      "system_design": ["architect_expert", "security_unified_expert", "database_expert"],
+      "deployment_production": ["devops_expert", "security_unified_expert", "tester_expert"],
+      "integration_apis": ["integration_expert", "security_unified_expert", "languages_expert"]
+    }
+  },
+
+  "capability_matrix": {
+    "system_architecture": {
+      "primary": ["architect_expert"],
+      "secondary": ["devops_expert", "security_unified_expert"]
+    },
+    "security": {
+      "primary": ["security_unified_expert"],
+      "secondary": ["architect_expert", "devops_expert"]
+    },
+    "database": {
+      "primary": ["database_expert"],
+      "secondary": ["architect_expert", "devops_expert"]
+    },
+    "testing_qa": {
+      "primary": ["tester_expert"],
+      "secondary": ["languages_expert", "devops_expert"]
+    },
+    "programming": {
+      "primary": ["languages_expert"],
+      "secondary": ["architect_expert", "tester_expert"]
+    },
+    "integrations": {
+      "primary": ["integration_expert"],
+      "secondary": ["security_unified_expert", "languages_expert"]
+    },
+    "ai_ml": {
+      "primary": ["ai_integration_expert"],
+      "secondary": ["languages_expert", "database_expert"]
+    },
+    "mobile": {
+      "primary": ["mobile_expert"],
+      "secondary": ["gui_super_expert", "languages_expert"]
+    },
+    "ui_design": {
+      "primary": ["gui_super_expert"],
+      "secondary": ["mobile_expert", "languages_expert"]
+    },
+    "infrastructure": {
+      "primary": ["devops_expert"],
+      "secondary": ["security_unified_expert", "architect_expert"]
+    }
+  },
+
+  "availability_check": {
+    "health_check_interval": "300",
+    "timeout_threshold": "30",
+    "retry_attempts": 3,
+    "methods": {
+      "file_exists": {
+        "description": "Verifica che il file agent esista",
+        "command": "test -f {agent_file_path}"
+      },
+      "content_validation": {
+        "description": "Verifica che il contenuto agent sia valido",
+        "command": "head -5 {agent_file_path} | grep -q 'EXPERT AGENT'"
+      }
+    }
+  },
+
+  "fallback_strategies": {
+    "agent_unavailable": {
+      "strategy": "fallback_cascade",
+      "max_fallback_depth": 2,
+      "notification": true
+    },
+
+    "cascading_rules": {
+      "architect_expert": {
+        "primary_fallback": "languages_expert",
+        "secondary_fallback": "integration_expert",
+        "strategy": "capability_overlap"
+      },
+      "security_unified_expert": {
+        "primary_fallback": "devops_expert",
+        "secondary_fallback": "integration_expert",
+        "strategy": "security_awareness"
+      },
+      "devops_expert": {
+        "primary_fallback": "languages_expert",
+        "secondary_fallback": "database_expert",
+        "strategy": "infrastructure_knowledge"
+      },
+      "database_expert": {
+        "primary_fallback": "languages_expert",
+        "secondary_fallback": "devops_expert",
+        "strategy": "data_handling"
+      },
+      "tester_expert": {
+        "primary_fallback": "languages_expert",
+        "secondary_fallback": "devops_expert",
+        "strategy": "debugging_capability"
+      },
+      "languages_expert": {
+        "primary_fallback": "architect_expert",
+        "secondary_fallback": "integration_expert",
+        "strategy": "implementation_focus"
+      },
+      "integration_expert": {
+        "primary_fallback": "languages_expert",
+        "secondary_fallback": "devops_expert",
+        "strategy": "communication_protocols"
+      },
+      "ai_integration_expert": {
+        "primary_fallback": "languages_expert",
+        "secondary_fallback": "database_expert",
+        "strategy": "data_processing"
+      },
+      "mobile_expert": {
+        "primary_fallback": "gui_super_expert",
+        "secondary_fallback": "languages_expert",
+        "strategy": "ui_development"
+      },
+      "gui_super_expert": {
+        "primary_fallback": "mobile_expert",
+        "secondary_fallback": "languages_expert",
+        "strategy": "interface_implementation"
+      }
+    },
+
+    "emergency_fallback": {
+      "agent": "languages_expert",
+      "reason": "Competenze generali più ampie per fallback universale"
+    }
+  },
+
+  "orchestration": {
+    "primary_orchestrator": "sviluppatore-capo.md",
+    "coordination_protocol": "PROTOCOL.md",
+    "max_concurrent_agents": 3,
+    "collaboration_patterns": {
+      "architecture_review": ["architect_expert", "security_unified_expert", "database_expert"],
+      "deployment_pipeline": ["devops_expert", "security_unified_expert", "tester_expert"],
+      "feature_implementation": ["languages_expert", "tester_expert", "gui_super_expert"],
+      "integration_project": ["integration_expert", "security_unified_expert", "languages_expert"]
+    }
+  },
+
+  "monitoring": {
+    "performance_tracking": true,
+    "usage_analytics": true,
+    "success_metrics": {
+      "resolution_time": "average_resolution_minutes",
+      "fallback_rate": "percentage_fallback_usage",
+      "collaboration_efficiency": "multi_agent_success_rate"
+    },
+
+    "alerts": {
+      "high_fallback_rate": 30,
+      "agent_unavailable_duration": 600,
+      "low_resolution_success": 70
+    }
+  },
+
+  "metadata": {
+    "total_agents": 10,
+    "active_agents": 10,
+    "inactive_agents": 0,
+    "creation_date": "2026-01-31",
+    "configuration_version": "1.0",
+    "last_validation": "2026-01-31T10:00:00Z"
+  }
+}

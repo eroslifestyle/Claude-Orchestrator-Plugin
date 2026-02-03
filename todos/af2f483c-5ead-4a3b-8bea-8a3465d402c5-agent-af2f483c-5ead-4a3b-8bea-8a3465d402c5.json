@@ -1,0 +1,12 @@
+[
+  {
+    "content": "STRATEGIA: Creare versione semplificata funzionante",
+    "status": "completed",
+    "activeForm": "Plugin semplificato creato - solo file esistenti"
+  },
+  {
+    "content": "Test plugin semplificato per caricamento",
+    "status": "in_progress",
+    "activeForm": "Testing plugin orchestrator semplificato"
+  }
+]

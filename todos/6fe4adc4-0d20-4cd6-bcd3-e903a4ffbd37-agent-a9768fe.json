@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Create main README.md in CTRADER directory",
+    "status": "in_progress",
+    "activeForm": "Creating main README.md"
+  },
+  {
+    "content": "Create API.md with comprehensive API reference",
+    "status": "pending",
+    "activeForm": "Creating API.md"
+  },
+  {
+    "content": "Create ARCHITECTURE.md with architecture documentation",
+    "status": "pending",
+    "activeForm": "Creating ARCHITECTURE.md"
+  },
+  {
+    "content": "Create DEPLOYMENT.md with deployment guide",
+    "status": "pending",
+    "activeForm": "Creating DEPLOYPMENT.md"
+  }
+]

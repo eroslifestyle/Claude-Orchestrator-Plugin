@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Analizzare errori TypeScript rimanenti",
+    "status": "completed",
+    "activeForm": "Analizzando errori TypeScript rimanenti"
+  },
+  {
+    "content": "Lanciare campagna massiccia 8+ agenti paralleli",
+    "status": "completed",
+    "activeForm": "Lanciando campagna massiccia 8+ agenti paralleli"
+  },
+  {
+    "content": "Verificare risultati agenti paralleli",
+    "status": "completed",
+    "activeForm": "Verificando risultati agenti paralleli"
+  },
+  {
+    "content": "Applicare soluzione pragmatica strict mode",
+    "status": "completed",
+    "activeForm": "Applicando soluzione pragmatica strict mode"
+  },
+  {
+    "content": "Correggere errori critici rimanenti",
+    "status": "in_progress",
+    "activeForm": "Correggendo errori critici rimanenti"
+  },
+  {
+    "content": "Compilare e verificare successo completo",
+    "status": "pending",
+    "activeForm": "Compilando e verificando successo completo"
+  }
+]

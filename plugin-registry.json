@@ -1,0 +1,91 @@
+{
+  "plugins": [
+    {
+      "name": "claude-orchestrator-plugin",
+      "version": "6.0.0",
+      "type": "system_integration",
+      "scope": "global",
+      "priority": "critical",
+      "capabilities": {
+        "claude_integration": {
+          "agent_bridge": true,
+          "session_management": true,
+          "auto_documentation": true,
+          "task_api_bridge": true,
+          "permissions_framework": true,
+          "seamless_orchestration": true
+        },
+        "orchestration": {
+          "parallel_agents": 64,
+          "dependency_resolution": true,
+          "fallback_resilience": true,
+          "advanced_routing": true,
+          "performance_monitoring": true
+        },
+        "security": {
+          "permission_validation": true,
+          "session_isolation": true,
+          "api_key_management": true,
+          "secure_communication": true
+        }
+      },
+      "integration_points": {
+        "claude_agents": {
+          "path": "~/.claude/agents",
+          "protocol": "3.1",
+          "bridge": "./bridges/agent-bridge.js"
+        },
+        "task_api": {
+          "endpoint": "https://api.claude.com/v1/tasks",
+          "bridge": "./bridges/task-api-bridge.js",
+          "websocket": "wss://api.claude.com/v1/tasks/ws"
+        },
+        "documentation": {
+          "auto_generate": true,
+          "target": "~/.claude/agents/docs/",
+          "format": "markdown",
+          "schedule": "0 * * * *"
+        },
+        "permissions": {
+          "framework": "./security/permissions-framework.js",
+          "validation": true,
+          "isolation": true
+        }
+      },
+      "activation": {
+        "auto_start": true,
+        "on_claude_init": true,
+        "health_checks": true,
+        "monitoring": true
+      },
+      "dependencies": {
+        "claude_core": ">=2.0.0",
+        "plugin_system": ">=1.5.0",
+        "agent_registry": ">=3.1.0"
+      },
+      "install_hooks": {
+        "pre_install": "./scripts/pre-install.sh",
+        "post_install": "./scripts/post-install.sh",
+        "validation": "./hooks/validate-environment.js",
+        "registration": "./hooks/register-bridges.js"
+      },
+      "status": "active",
+      "last_updated": "2026-01-31T17:30:00.000Z",
+      "metrics": {
+        "sessions_handled": 0,
+        "agents_coordinated": 0,
+        "tasks_completed": 0,
+        "uptime": 0,
+        "success_rate": 100
+      }
+    }
+  ],
+  "registry_metadata": {
+    "version": "6.0.0",
+    "last_updated": "2026-01-31T17:30:00.000Z",
+    "total_plugins": 1,
+    "active_plugins": 1,
+    "level": 6,
+    "integration_status": "complete"
+  }
+}

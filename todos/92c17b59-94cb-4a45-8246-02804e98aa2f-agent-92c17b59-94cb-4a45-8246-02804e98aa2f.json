@@ -1,0 +1,22 @@
+[
+  {
+    "content": "NUOVO PROBLEMA: Investigare sincronizzazione stato bot nella GUI",
+    "status": "completed",
+    "activeForm": "Identificato: bot emette stats correttamente"
+  },
+  {
+    "content": "Verificare ricezione signal_stats_update nella GUI StatisticsTab",
+    "status": "completed",
+    "activeForm": "Signal connesso correttamente - _on_stats_update funziona"
+  },
+  {
+    "content": "Verificare quando _connect_bot_signals viene chiamato",
+    "status": "completed",
+    "activeForm": "Signal connesso all'avvio del bot"
+  },
+  {
+    "content": "Aggiunto log diagnostico per verificare valori bot_running e uptime",
+    "status": "in_progress",
+    "activeForm": "Log diagnostico aggiunto - serve riavvio bot per test"
+  }
+]

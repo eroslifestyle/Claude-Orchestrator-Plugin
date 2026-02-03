@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Fix routing table - replace sonnet with inherit workaround",
+    "status": "completed",
+    "activeForm": "Fixing routing table"
+  },
+  {
+    "content": "Update model selection rules section",
+    "status": "completed",
+    "activeForm": "Updating model selection rules"
+  },
+  {
+    "content": "Update escalation protocol",
+    "status": "completed",
+    "activeForm": "Updating escalation protocol"
+  },
+  {
+    "content": "Initialize git repository",
+    "status": "in_progress",
+    "activeForm": "Initializing git repository"
+  },
+  {
+    "content": "Update README with Sonnet fix documentation",
+    "status": "pending",
+    "activeForm": "Updating README"
+  },
+  {
+    "content": "Commit and push to GitHub",
+    "status": "pending",
+    "activeForm": "Committing and pushing to GitHub"
+  }
+]

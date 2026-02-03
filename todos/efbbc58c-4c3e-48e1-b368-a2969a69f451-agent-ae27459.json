@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Implement keyword-extractor.ts with NLP extraction",
+    "status": "completed",
+    "activeForm": "Implementing keyword-extractor.ts with NLP extraction"
+  },
+  {
+    "content": "Implement domain-detector.ts with multi-domain classification",
+    "status": "in_progress",
+    "activeForm": "Implementing domain-detector.ts with multi-domain classification"
+  },
+  {
+    "content": "Implement complexity-analyzer.ts with task complexity assessment",
+    "status": "pending",
+    "activeForm": "Implementing complexity-analyzer.ts with task complexity assessment"
+  },
+  {
+    "content": "Implement dependency-detector.ts with automatic dependency detection",
+    "status": "pending",
+    "activeForm": "Implementing dependency-detector.ts with automatic dependency detection"
+  },
+  {
+    "content": "Create comprehensive test suites for all analysis modules",
+    "status": "pending",
+    "activeForm": "Creating comprehensive test suites for all analysis modules"
+  },
+  {
+    "content": "Create index.ts barrel export for analysis layer",
+    "status": "pending",
+    "activeForm": "Creating index.ts barrel export for analysis layer"
+  }
+]

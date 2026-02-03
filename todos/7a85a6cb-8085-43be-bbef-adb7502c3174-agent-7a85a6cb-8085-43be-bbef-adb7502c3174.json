@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Verificare REALMENTE se le modifiche sono nel file tab_csv.py",
+    "status": "in_progress",
+    "activeForm": "Actually verifying if modifications are in tab_csv.py file"
+  },
+  {
+    "content": "Controllare se esistono altri file che gestiscono la tabella CSV",
+    "status": "pending",
+    "activeForm": "Checking if other files manage the CSV table"
+  },
+  {
+    "content": "Applicare le modifiche REALI se non ci sono",
+    "status": "pending",
+    "activeForm": "Applying REAL modifications if they don't exist"
+  },
+  {
+    "content": "Testare che le modifiche funzionino dopo il riavvio",
+    "status": "pending",
+    "activeForm": "Testing modifications work after restart"
+  }
+]

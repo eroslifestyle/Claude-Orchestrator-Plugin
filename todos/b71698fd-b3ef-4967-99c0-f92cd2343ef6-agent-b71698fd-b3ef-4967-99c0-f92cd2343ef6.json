@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Implementare sistema di report automatici per completamento agent",
+    "status": "in_progress",
+    "activeForm": "Implementing automatic reporting system"
+  },
+  {
+    "content": "Creare monitoring dashboard per tracking progressi",
+    "status": "pending",
+    "activeForm": "Creating monitoring dashboard"
+  },
+  {
+    "content": "Setup notification system per ogni completamento",
+    "status": "pending",
+    "activeForm": "Setting up notification system"
+  },
+  {
+    "content": "Generare report aggregati di tutti i risultati",
+    "status": "pending",
+    "activeForm": "Generating aggregate reports"
+  }
+]

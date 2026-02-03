@@ -1,0 +1,32 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "",
+    "ANTHROPIC_AUTH_TOKEN": "",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5-20250929",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "claude-sonnet-4-5-20250929"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Edit",
+      "Write",
+      "Read",
+      "Glob",
+      "Grep",
+      "NotebookEdit",
+      "WebFetch(*)",
+      "WebSearch",
+      "Task(*)",
+      "Skill(*)",
+      "TodoWrite",
+      "AskUserQuestion",
+      "EnterPlanMode",
+      "ExitPlanMode",
+      "mcp__orchestrator__*",
+      "mcp__web-search-prime__*",
+      "mcp__web-reader__*",
+      "mcp__zai-mcp-server__*"
+    ],
+    "deny": []
+  }
+}

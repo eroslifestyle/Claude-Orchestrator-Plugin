@@ -1,0 +1,12 @@
+[
+  {
+    "content": "Applicare riparazioni al plugin COMPLETO claude-orchestrator-plugin",
+    "status": "completed",
+    "activeForm": "Plugin completo riparato e registrato"
+  },
+  {
+    "content": "Testare plugin completo per attivazione e utilizzo",
+    "status": "in_progress",
+    "activeForm": "Ready per test plugin completo"
+  }
+]

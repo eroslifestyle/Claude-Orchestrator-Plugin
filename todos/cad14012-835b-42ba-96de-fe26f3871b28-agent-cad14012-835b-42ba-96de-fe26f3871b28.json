@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Fix BUG orchestrator_status + keyword matching",
+    "status": "completed",
+    "activeForm": "Fixed bugs"
+  },
+  {
+    "content": "Regola #1 CLEANUP processi diffusa a tutti agent",
+    "status": "completed",
+    "activeForm": "Rule #1 deployed"
+  },
+  {
+    "content": "Regola #2 NO FILE NUL diffusa a tutti agent",
+    "status": "completed",
+    "activeForm": "Rule #2 deployed"
+  },
+  {
+    "content": "Riavviare Claude Code per fix MCP",
+    "status": "pending",
+    "activeForm": "Awaiting restart"
+  }
+]

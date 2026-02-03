@@ -1,0 +1,62 @@
+# Cache and temp files
+cache/
+plugins/cache/
+plugins/orchestrator-plugin/node_modules/
+plugins/orchestrator-plugin/dist/
+paste-cache/
+stats-cache.json
+*.json.bak
+
+# Sessions and history (private data)
+projects/
+file-history/
+sessions/
+history.jsonl
+shell-snapshots/
+
+# Credentials and sensitive data
+.credentials.json
+*.anthropic.json
+credentials/
+*.key
+*.pem
+.env
+
+# IDE and editor
+.idea/
+.vscode/
+ide/
+*.swp
+*.swo
+.claude/
+.playwright-mcp/
+
+# Logs and debug
+*.log
+logs/
+debug/
+mod_log*.txt
+monitoring/
+
+# Temp files
+temp_*.py
+temp_*.ps1
+temp_*.js
+NUL
+verify.txt
+stress_test_*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local settings (keep settings.json as template)
+settings.local.json
+settings.zai.json
+ralph-loop.local.md
+
+# Old versions
+orchestrator-plugin-v*/
+
+# Stats
+statsig/

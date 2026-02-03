@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Analizzare architettura esistente autostart",
+    "status": "completed",
+    "activeForm": "Analyzing existing autostart architecture"
+  },
+  {
+    "content": "Modificare app_controller.py per autostart robusto Telegram",
+    "status": "completed",
+    "activeForm": "Modifying app_controller.py for robust Telegram autostart"
+  },
+  {
+    "content": "Aggiungere checkbox autostart Telegram in settings_widget.py",
+    "status": "completed",
+    "activeForm": "Adding Telegram autostart checkbox to settings"
+  },
+  {
+    "content": "Creare meccanismo feedback UI durante startup",
+    "status": "in_progress",
+    "activeForm": "Creating UI feedback mechanism during startup"
+  },
+  {
+    "content": "Implementare error handling e recovery per autostart",
+    "status": "pending",
+    "activeForm": "Implementing error handling and recovery for autostart"
+  }
+]

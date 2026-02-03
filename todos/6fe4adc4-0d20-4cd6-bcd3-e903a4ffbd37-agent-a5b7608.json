@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Create comprehensive integration test suite for cTrader module using DEMO credentials",
+    "status": "in_progress",
+    "activeForm": "Creating comprehensive integration test suite"
+  },
+  {
+    "content": "Run all integration tests and collect results",
+    "status": "pending",
+    "activeForm": "Running integration tests"
+  },
+  {
+    "content": "Generate detailed test report with conclusions",
+    "status": "pending",
+    "activeForm": "Generating test report"
+  }
+]

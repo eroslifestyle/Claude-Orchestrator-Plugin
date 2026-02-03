@@ -1,0 +1,47 @@
+[
+  {
+    "content": "LIVELLO 1 - Analizzare l'architettura esistente e progettare la struttura del plugin",
+    "status": "completed",
+    "activeForm": "Analizzando l'architettura esistente e progettando la struttura del plugin"
+  },
+  {
+    "content": "LIVELLO 1 - Creare la foundation del progetto con TypeScript e struttura modulare",
+    "status": "completed",
+    "activeForm": "Creando la foundation del progetto con TypeScript e struttura modulare"
+  },
+  {
+    "content": "LIVELLO 2 - Implementare Analysis Layer (KeywordExtractor, ComplexityAnalyzer, DomainDetector)",
+    "status": "in_progress",
+    "activeForm": "Implementando Analysis Layer (KeywordExtractor, ComplexityAnalyzer, DomainDetector)"
+  },
+  {
+    "content": "LIVELLO 2 - Implementare Routing Layer (AgentRouter, ModelSelector, DependencyGraph)",
+    "status": "in_progress",
+    "activeForm": "Implementando Routing Layer (AgentRouter, ModelSelector, DependencyGraph)"
+  },
+  {
+    "content": "LIVELLO 2 - Implementare Execution Layer (TaskLauncher, ProgressTracker, ResultAggregator)",
+    "status": "in_progress",
+    "activeForm": "Implementando Execution Layer (TaskLauncher, ProgressTracker, ResultAggregator)"
+  },
+  {
+    "content": "LIVELLO 2 - Implementare UI Layer (TableRenderer, ProgressBar, MetricsDashboard)",
+    "status": "in_progress",
+    "activeForm": "Implementando UI Layer (TableRenderer, ProgressBar, MetricsDashboard)"
+  },
+  {
+    "content": "LIVELLO 3 - Creare sistema di configurazione e agent registry parser",
+    "status": "in_progress",
+    "activeForm": "Creando sistema di configurazione e agent registry parser"
+  },
+  {
+    "content": "LIVELLO 3 - Implementare comando /orchestrate con interfaccia CLI interattiva",
+    "status": "in_progress",
+    "activeForm": "Implementando comando /orchestrate con interfaccia CLI interattiva"
+  },
+  {
+    "content": "LIVELLO 3 - Creare sistema di testing completo e documentazione automatica",
+    "status": "in_progress",
+    "activeForm": "Creando sistema di testing completo e documentazione automatica"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "content": "Fix parallel-execution-engine.ts errors (Task import, description property, DependencyGraph)",
+    "status": "in_progress",
+    "activeForm": "Fixing parallel-execution-engine.ts"
+  },
+  {
+    "content": "Fix AdvancedParallelEngine.ts EntryType error",
+    "status": "pending",
+    "activeForm": "Fixing AdvancedParallelEngine.ts"
+  },
+  {
+    "content": "Fix MultiLevelCoordinator.ts (missing method and coordinationStrategy)",
+    "status": "pending",
+    "activeForm": "Fixing MultiLevelCoordinator.ts"
+  },
+  {
+    "content": "Fix batch-execution-manager.ts import errors and missing properties",
+    "status": "pending",
+    "activeForm": "Fixing batch-execution-manager.ts"
+  },
+  {
+    "content": "Fix error-handling-system.ts import and ErrorHandlingResult errors",
+    "status": "pending",
+    "activeForm": "Fixing error-handling-system.ts"
+  },
+  {
+    "content": "Fix real-time-progress-tracker.ts import and ProgressUpdateData errors",
+    "status": "pending",
+    "activeForm": "Fixing real-time-progress-tracker.ts"
+  },
+  {
+    "content": "Fix resource-management-system.ts import and missing properties",
+    "status": "pending",
+    "activeForm": "Fixing resource-management-system.ts"
+  },
+  {
+    "content": "Fix DynamicSubTaskSpawner.ts missing method",
+    "status": "pending",
+    "activeForm": "Fixing DynamicSubTaskSpawner.ts"
+  },
+  {
+    "content": "Fix AdvancedDependencyResolver.ts ExecutionIssue and OptimizationOpportunity errors",
+    "status": "pending",
+    "activeForm": "Fixing AdvancedDependencyResolver.ts"
+  }
+]

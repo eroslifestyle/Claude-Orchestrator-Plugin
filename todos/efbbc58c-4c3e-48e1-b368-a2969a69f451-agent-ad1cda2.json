@@ -1,0 +1,42 @@
+[
+  {
+    "content": "Create interactive CLI module with confirmation prompts and progress display",
+    "status": "completed",
+    "activeForm": "Creating interactive CLI module"
+  },
+  {
+    "content": "Implement session management with persistence and recovery",
+    "status": "completed",
+    "activeForm": "Implementing session management"
+  },
+  {
+    "content": "Create analysis layer components (keyword extraction, domain detection)",
+    "status": "completed",
+    "activeForm": "Creating analysis layer components"
+  },
+  {
+    "content": "Implement routing layer with agent and model selection",
+    "status": "in_progress",
+    "activeForm": "Implementing routing layer"
+  },
+  {
+    "content": "Integrate all layers in OrchestratorEngine with complete orchestration flow",
+    "status": "pending",
+    "activeForm": "Integrating layers in OrchestratorEngine"
+  },
+  {
+    "content": "Update main index.ts with full command implementations",
+    "status": "pending",
+    "activeForm": "Updating main index.ts"
+  },
+  {
+    "content": "Add configuration loading from orchestrator-config.yaml",
+    "status": "pending",
+    "activeForm": "Adding configuration loading"
+  },
+  {
+    "content": "Create comprehensive error handling and recovery mechanisms",
+    "status": "pending",
+    "activeForm": "Creating error handling"
+  }
+]

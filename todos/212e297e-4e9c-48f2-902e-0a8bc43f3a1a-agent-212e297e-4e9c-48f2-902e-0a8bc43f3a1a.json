@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Leggere skill orchestrator completo",
+    "status": "completed",
+    "activeForm": "Leggendo skill orchestrator"
+  },
+  {
+    "content": "Leggere core/orchestrator.md",
+    "status": "completed",
+    "activeForm": "Leggendo core orchestrator"
+  },
+  {
+    "content": "Analizzare struttura sistema",
+    "status": "completed",
+    "activeForm": "Analizzando struttura"
+  },
+  {
+    "content": "Identificare punti di forza",
+    "status": "completed",
+    "activeForm": "Identificando strengths"
+  },
+  {
+    "content": "Identificare punti di debolezza",
+    "status": "completed",
+    "activeForm": "Identificando weaknesses"
+  },
+  {
+    "content": "Proporre fix e upgrade",
+    "status": "in_progress",
+    "activeForm": "Proponendo miglioramenti"
+  }
+]

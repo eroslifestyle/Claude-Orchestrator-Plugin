@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Creare pacchetto distribuzione",
+    "status": "in_progress",
+    "activeForm": "Creando pacchetto distribuzione"
+  },
+  {
+    "content": "Preparare script di installazione",
+    "status": "pending",
+    "activeForm": "Preparando script di installazione"
+  },
+  {
+    "content": "Creare istruzioni installazione",
+    "status": "pending",
+    "activeForm": "Creando istruzioni installazione"
+  },
+  {
+    "content": "Testare pacchetto",
+    "status": "pending",
+    "activeForm": "Testando pacchetto"
+  }
+]

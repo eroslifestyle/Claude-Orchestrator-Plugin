@@ -1,0 +1,12 @@
+[
+  {
+    "content": "Aggiornare formato comandi per compatibilità Claude Code",
+    "status": "completed",
+    "activeForm": "Comandi aggiornati con frontmatter YAML corretto"
+  },
+  {
+    "content": "Testare plugin dopo correzioni formato",
+    "status": "in_progress",
+    "activeForm": "Testing plugin con formato corretto"
+  }
+]

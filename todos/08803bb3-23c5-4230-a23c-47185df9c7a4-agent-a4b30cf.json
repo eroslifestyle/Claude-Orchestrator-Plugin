@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Fix orchestrator-engine.ts interface errors",
+    "status": "completed",
+    "activeForm": "Fixing orchestrator-engine.ts interface errors"
+  },
+  {
+    "content": "Fix AutoDocumentationEngine.ts property access errors",
+    "status": "completed",
+    "activeForm": "Fixing AutoDocumentationEngine.ts property access errors"
+  },
+  {
+    "content": "Fix remaining TypeScript errors",
+    "status": "in_progress",
+    "activeForm": "Fixing remaining TypeScript errors"
+  }
+]

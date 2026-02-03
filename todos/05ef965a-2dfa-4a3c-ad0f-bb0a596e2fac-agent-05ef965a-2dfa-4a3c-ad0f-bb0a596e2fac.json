@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Correggere tutti gli errori TypeScript rimanenti",
+    "status": "in_progress",
+    "activeForm": "Correggendo errori rimanenti con approccio massiccio"
+  },
+  {
+    "content": "Esportare Task, TaskResult, ModelType",
+    "status": "pending",
+    "activeForm": "Correggendo import parallel-execution-engine"
+  },
+  {
+    "content": "Armonizzare TaskResult tra moduli",
+    "status": "pending",
+    "activeForm": "Correggendo TaskResult incompatibilità"
+  },
+  {
+    "content": "Aggiungere proprietà mancanti alle interfacce",
+    "status": "pending",
+    "activeForm": "Correggendo proprietà mancanti"
+  },
+  {
+    "content": "Eseguire build finale per confermare 0 errori",
+    "status": "pending",
+    "activeForm": "Verificando build finale"
+  }
+]

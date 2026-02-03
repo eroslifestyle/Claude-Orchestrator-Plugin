@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Initialize Git repository",
+    "status": "completed",
+    "activeForm": "Initializing Git repository"
+  },
+  {
+    "content": "Configure Git user settings",
+    "status": "completed",
+    "activeForm": "Configuring Git user settings"
+  },
+  {
+    "content": "Add all files to staging",
+    "status": "completed",
+    "activeForm": "Adding all files to staging"
+  },
+  {
+    "content": "Create initial commit",
+    "status": "completed",
+    "activeForm": "Creating initial commit"
+  },
+  {
+    "content": "Create GitHub repository manually",
+    "status": "pending",
+    "activeForm": "Creating GitHub repository manually"
+  },
+  {
+    "content": "Add remote origin and push to GitHub",
+    "status": "pending",
+    "activeForm": "Adding remote origin and pushing to GitHub"
+  }
+]

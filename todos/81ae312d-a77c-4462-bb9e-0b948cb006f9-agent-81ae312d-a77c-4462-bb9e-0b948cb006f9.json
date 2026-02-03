@@ -1,0 +1,12 @@
+[
+  {
+    "content": "Correggere path plugin e rimuovere duplicazioni",
+    "status": "completed",
+    "activeForm": "Path corretto e plugin duplicato rimosso"
+  },
+  {
+    "content": "Testare plugin con correzioni path e directory",
+    "status": "in_progress",
+    "activeForm": "Testing plugin con path relativo"
+  }
+]

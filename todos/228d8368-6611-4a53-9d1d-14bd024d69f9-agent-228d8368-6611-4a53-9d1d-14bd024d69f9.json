@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Fix routing table - replace sonnet with inherit workaround",
+    "status": "completed",
+    "activeForm": "Fixing routing table"
+  },
+  {
+    "content": "Update model selection rules section",
+    "status": "completed",
+    "activeForm": "Updating model selection rules"
+  },
+  {
+    "content": "Update escalation protocol",
+    "status": "completed",
+    "activeForm": "Updating escalation protocol"
+  },
+  {
+    "content": "Test Sonnet workaround with Task tool",
+    "status": "pending",
+    "activeForm": "Testing Sonnet workaround"
+  }
+]
