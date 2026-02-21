@@ -1,0 +1,365 @@
+# ====================================================================
+# Claude Code Dual Profile Management System
+# ====================================================================
+# Version: 5.0 - Manual VS Code Restart Only
+# Purpose: Switch between Anthropic (cca) and GLM5 (ccg) Claude Code profiles
+# Features: Sync flush, hash verification, race condition prevention,
+#           multi-fallback detached VS Code restart
+# ====================================================================
+
+# ====================================================================
+# CONFIGURATION - CUSTOMIZE THESE PATHS FOR YOUR SYSTEM
+# ====================================================================
+# Replace <USERNAME> with your Windows username
+# Replace <VSCODE_PATH> with your VS Code installation path
+
+$claudeConfigDir = "$env:USERPROFILE\.claude"
+$settingsAnthropic = "$claudeConfigDir\settings-anthropic.json"
+$settingsGlm = "$claudeConfigDir\settings-glm.json"
+$settingsActive = "$claudeConfigDir\settings.json"
+
+# VS Code path - customize for your installation
+# Common locations:
+#   - "C:\Program Files\Microsoft VS Code\Code.exe"
+#   - "C:\Users\<USERNAME>\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+$vsCodeExe = "C:\Program Files\Microsoft VS Code\Code.exe"
+
+# Claude executable path
+$claudeExePath = "$env:USERPROFILE\.local\bin\claude.exe"
+
+# ====================================================================
+# Helper Function: Restart-VSCodeSafely (Multi-Fallback)
+# ====================================================================
+function Restart-VSCodeSafely {
+    <#
+    .SYNOPSIS
+    Restart VS Code using multiple fallback methods for true detached execution.
+
+    .DESCRIPTION
+    Attempts to restart VS Code in a detached process that survives parent
+    PowerShell termination. Tries methods in order until one succeeds.
+
+    .PARAMETER VsCodeExe
+    Full path to VS Code executable.
+
+    .PARAMETER NoVerbose
+    Disable verbose logging.
+
+    .EXAMPLE
+    Restart-VSCodeSafely -VsCodeExe "C:\Program Files\Microsoft VS Code\Code.exe"
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$VsCodeExe,
+
+        [switch]$NoVerbose
+    )
+
+    $VerboseOutput = -not $NoVerbose
+
+    function Write-VerboseLog {
+        param([string]$Message)
+        if ($VerboseOutput) {
+            Write-Host "    [VERBOSE] $Message" -ForegroundColor DarkGray
+        }
+    }
+
+    Write-VerboseLog "Starting VS Code restart sequence..."
+    Write-VerboseLog "Target: $VsCodeExe"
+
+    # Validate VS Code executable exists
+    if (-not (Test-Path $VsCodeExe)) {
+        Write-Host "    [ERROR] VS Code not found at: $VsCodeExe" -ForegroundColor Red
+        return $false
+    }
+
+    # METHOD 1: WScript.Shell COM Object (PRIMARY)
+    Write-VerboseLog "Method 1: WScript.Shell COM object..."
+    try {
+        $wshell = New-Object -ComObject WScript.Shell
+        $result = $wshell.Run("`"$VsCodeExe`"", 2, $false)
+
+        if ($result -eq 0) {
+            Write-Host "    VS Code restarted (Method: WScript.Shell COM)" -ForegroundColor Green
+            [System.Runtime.Interopservices.Marshal]::ReleaseComObject($wshell) | Out-Null
+            return $true
+        }
+        [System.Runtime.Interopservices.Marshal]::ReleaseComObject($wshell) | Out-Null
+    }
+    catch {
+        Write-VerboseLog "WScript.Shell failed: $_"
+    }
+
+    # METHOD 2: PowerShell Job
+    Write-VerboseLog "Method 2: PowerShell Job..."
+    try {
+        $scriptBlock = {
+            param($exePath)
+            Start-Sleep -Seconds 2
+            & $exePath 2>&1 | Out-Null
+        }
+
+        $job = Start-Job -ScriptBlock $scriptBlock -ArgumentList $VsCodeExe
+        Start-Sleep -Seconds 3
+
+        $vsCodeCheck = Get-Process -Name "Code" -ErrorAction SilentlyContinue
+        if ($vsCodeCheck) {
+            Write-Host "    VS Code restarted (Method: PowerShell Job)" -ForegroundColor Green
+            Remove-Job -Id $job.Id -Force -ErrorAction SilentlyContinue
+            return $true
+        }
+        Remove-Job -Id $job.Id -Force -ErrorAction SilentlyContinue
+    }
+    catch {
+        Write-VerboseLog "PowerShell Job failed: $_"
+    }
+
+    # METHOD 3: Manual fallback
+    Write-Host "`n    [FALLBACK] Automatic restart failed" -ForegroundColor Yellow
+    Write-Host "    Please restart VS Code manually:" -ForegroundColor Yellow
+    Write-Host "      Run: code" -ForegroundColor White
+
+    return $false
+}
+
+# ====================================================================
+# Core Function: Switch-ClaudeProfile
+# ====================================================================
+function Switch-ClaudeProfile {
+    <#
+    .SYNOPSIS
+    Switch between Claude Code profiles with robust file handling.
+
+    .PARAMETER Profile
+    Target profile: 'cca' (Anthropic) or 'ccg' (GLM5)
+
+    .PARAMETER Restart
+    Automatically restart VS Code after switch
+
+    .EXAMPLE
+    Switch-ClaudeProfile -Profile cca
+    Switch-ClaudeProfile -Profile ccg -Restart
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true, Position = 0)]
+        [ValidateSet('cca', 'ccg', 'ANTHROPIC', 'GLM')]
+        [string]$Profile,
+
+        [Parameter(Mandatory = $false)]
+        [switch]$Restart
+    )
+
+    # Normalize profile name
+    $Profile = $Profile.ToLower()
+    if ($Profile -eq 'anthropic') { $Profile = 'cca' }
+    if ($Profile -eq 'glm') { $Profile = 'ccg' }
+
+    # Determine source file
+    $sourceFile = switch ($Profile) {
+        'cca' { $settingsAnthropic }
+        'ccg' { $settingsGlm }
+    }
+
+    $profileName = switch ($Profile) {
+        'cca' { 'Anthropic' }
+        'ccg' { 'GLM5' }
+    }
+
+    Write-Host "`n[Switch-ClaudeProfile] Switching to $profileName profile..." -ForegroundColor Cyan
+
+    # Validate source file
+    if (-not (Test-Path $sourceFile)) {
+        Write-Host "[ERROR] Source file not found: $sourceFile" -ForegroundColor Red
+        return $false
+    }
+
+    # Step 1: Calculate source hash
+    Write-Host "  Step 1/5: Calculating source hash..." -ForegroundColor Gray
+    $sourceHash = Get-FileHash -Path $sourceFile -Algorithm SHA256 -ErrorAction SilentlyContinue
+
+    if (-not $sourceHash) {
+        Write-Host "[ERROR] Failed to calculate source hash" -ForegroundColor Red
+        return $false
+    }
+
+    # Step 2: Copy settings
+    Write-Host "  Step 2/5: Copying settings file..." -ForegroundColor Gray
+    try {
+        Copy-Item -Path $sourceFile -Destination $settingsActive -Force -ErrorAction Stop
+    }
+    catch {
+        Write-Host "[ERROR] Copy failed: $_" -ForegroundColor Red
+        return $false
+    }
+
+    # Step 3: Synchronous flush
+    Write-Host "  Step 3/5: Flushing file system..." -ForegroundColor Gray
+    try {
+        $fs = [System.IO.File]::OpenWrite($settingsActive)
+        $fs.Flush($true)
+        $fs.Close()
+        $fs.Dispose()
+    }
+    catch {
+        Write-Host "[WARN] Flush failed (non-critical): $_" -ForegroundColor Yellow
+    }
+
+    # Step 4: Verify hash
+    Write-Host "  Step 4/5: Verifying hash..." -ForegroundColor Gray
+    $destHash = Get-FileHash -Path $settingsActive -Algorithm SHA256 -ErrorAction SilentlyContinue
+
+    if ($destHash.Hash -ne $sourceHash.Hash) {
+        Write-Host "[ERROR] Hash mismatch!" -ForegroundColor Red
+        return $false
+    }
+
+    Write-Host "  Hash verified: $($destHash.Hash.Substring(0, 16))..." -ForegroundColor Green
+
+    # Step 5: Restart VS Code if requested
+    if ($Restart) {
+        Write-Host "  Step 5/5: Restarting VS Code..." -ForegroundColor Gray
+
+        $vsCodeProcesses = Get-Process -Name "Code" -ErrorAction SilentlyContinue
+
+        if ($vsCodeProcesses) {
+            foreach ($proc in $vsCodeProcesses) {
+                try { $proc.CloseMainWindow() | Out-Null } catch {}
+            }
+
+            Start-Sleep -Seconds 2
+            $remaining = Get-Process -Name "Code" -ErrorAction SilentlyContinue
+            if ($remaining) {
+                Stop-Process -Name "Code" -Force -ErrorAction SilentlyContinue
+                Start-Sleep -Seconds 1
+            }
+
+            Restart-VSCodeSafely -VsCodeExe $vsCodeExe -NoVerbose $true
+        }
+    }
+
+    Write-Host "`n[SUCCESS] $profileName profile activated" -ForegroundColor Green
+    Write-Host "  Active: $settingsActive`n" -ForegroundColor Gray
+
+    return $true
+}
+
+# ====================================================================
+# Verification Function: Test-ClaudeProfile
+# ====================================================================
+function Test-ClaudeProfile {
+    <#
+    .SYNOPSIS
+    Test the current Claude Code profile configuration.
+    #>
+    [CmdletBinding()]
+    param()
+
+    Write-Host "`n[Test-ClaudeProfile] Checking configuration..." -ForegroundColor Cyan
+
+    if (-not (Test-Path $settingsActive)) {
+        Write-Host "[ERROR] settings.json not found!" -ForegroundColor Red
+        return
+    }
+
+    $activeHash = Get-FileHash -Path $settingsActive -Algorithm SHA256 -ErrorAction SilentlyContinue
+    $anthropicHash = Get-FileHash -Path $settingsAnthropic -Algorithm SHA256 -ErrorAction SilentlyContinue
+    $glmHash = Get-FileHash -Path $settingsGlm -Algorithm SHA256 -ErrorAction SilentlyContinue
+
+    Write-Host "`nCurrent Status:" -ForegroundColor White
+    Write-Host "  Config Dir: $claudeConfigDir" -ForegroundColor Gray
+
+    if ($activeHash.Hash -eq $anthropicHash.Hash) {
+        Write-Host "  Active Profile: ANTHROPIC (cca)" -ForegroundColor Green
+    }
+    elseif ($activeHash.Hash -eq $glmHash.Hash) {
+        Write-Host "  Active Profile: GLM5 (ccg)" -ForegroundColor Yellow
+    }
+    else {
+        Write-Host "  Active Profile: UNKNOWN or MODIFIED" -ForegroundColor Red
+    }
+
+    Write-Host ""
+}
+
+# ====================================================================
+# Alias Wrappers
+# ====================================================================
+function cca {
+    <#
+    .SYNOPSIS
+    Switch to Anthropic (cca) profile.
+    #>
+    param([switch]$Restart)
+    Switch-ClaudeProfile -Profile cca -Restart:$Restart
+}
+
+function ccg {
+    <#
+    .SYNOPSIS
+    Switch to GLM5 (ccg) profile.
+    #>
+    param([switch]$Restart)
+    Switch-ClaudeProfile -Profile ccg -Restart:$Restart
+}
+
+function claude {
+    <#
+    .SYNOPSIS
+    Execute claude.exe with the ACTIVE profile.
+    #>
+    param(
+        [Parameter(Position = 0, ValueFromRemainingArguments = $true)]
+        [string[]]$Arguments
+    )
+
+    if (-not (Test-Path $claudeExePath)) {
+        Write-Error "[ERROR] claude.exe not found at: $claudeExePath"
+        return
+    }
+
+    $activeHash = (Get-FileHash -Path $settingsActive -Algorithm SHA256 -ErrorAction SilentlyContinue).Hash
+    $anthropicHash = (Get-FileHash -Path $settingsAnthropic -Algorithm SHA256 -ErrorAction SilentlyContinue).Hash
+    $glmHash = (Get-FileHash -Path $settingsGlm -Algorithm SHA256 -ErrorAction SilentlyContinue).Hash
+
+    $activeProfile = if ($activeHash -eq $anthropicHash) { 'Anthropic (cca)' }
+                    elseif ($activeHash -eq $glmHash) { 'GLM5 (ccg)' }
+                    else { 'Unknown' }
+
+    Write-Host "[claude] Starting with active profile: $activeProfile" -ForegroundColor Cyan
+
+    if ($Arguments) {
+        & $claudeExePath $Arguments
+    }
+    else {
+        & $claudeExePath
+    }
+}
+
+function code {
+    <#
+    .SYNOPSIS
+    Launch VS Code.
+    #>
+    param(
+        [Parameter(Position = 0, ValueFromRemainingArguments = $true)]
+        [string[]]$Path
+    )
+
+    if ($Path) {
+        & $vsCodeExe $Path
+    }
+    else {
+        & $vsCodeExe
+    }
+}
+
+# ====================================================================
+# Display welcome message on profile load
+# ====================================================================
+if ($Host.Name -eq 'ConsoleHost') {
+    Write-Host "`n[Claude Code Profile Manager v5.0]" -ForegroundColor Cyan
+    Write-Host "  Commands: cca, ccg, claude, Test-ClaudeProfile, code" -ForegroundColor DarkGray
+    Write-Host "  Use -Restart flag to auto-restart VS Code`n" -ForegroundColor DarkGray
+}

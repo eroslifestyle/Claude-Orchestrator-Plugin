@@ -1,0 +1,192 @@
+# Claude Orchestrator .gitignore
+
+# ============================================
+# Operating System Files
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+
+# ============================================
+# Editor/IDE Files
+# ============================================
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*.swn
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================
+# Temporary and Backup Files
+# ============================================
+
+# General temp files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# Timestamped files (often created by scripts)
+*_202[0-9]*.log
+*_202[0-9]*.txt
+*_202[0-9]*.md
+
+# NUL files (Windows reserved name)
+NUL
+
+# ============================================
+# Logs and Databases
+# ============================================
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================
+# Build and Distribution
+# ============================================
+
+# Build outputs
+dist/
+build/
+out/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ============================================
+# Dependencies
+# ============================================
+
+# Node.js
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python
+venv/
+.venv/
+env/
+.env
+*.egg
+
+# ============================================
+# Credentials and Secrets (NEVER COMMIT)
+# ============================================
+
+# API Keys and Tokens
+.env
+.env.*
+*.pem
+*.key
+secrets.json
+credentials.json
+.claude/.credentials.json
+
+# OAuth tokens
+token.json
+oauth.json
+
+# ============================================
+# Claude-Specific Files
+# ============================================
+
+# User's Claude settings (contain sensitive data)
+.claude/settings.json
+.claude/settings-*.json
+!.claude/settings-anthropic.json.example
+!.claude/settings-glm.json.example
+
+# Credentials
+.claude/.credentials.json
+
+# Local orchestrator data
+.claude/orchestrator/VERSION.json
+.claude/orchestrator/cache/
+
+# Backup directories
+.claude/backups/
+
+# Logs
+.claude/logs/
+
+# MCP plugin cache
+.claude/mcp-plugins/*/cache/
+.claude/mcp-plugins/*/node_modules/
+
+# ============================================
+# Project-Specific Exclusions
+# ============================================
+
+# Test outputs
+test-results/
+coverage/
+.coverage
+htmlcov/
+
+# Documentation builds
+docs/_build/
+site/
+
+# Temporary migration files
+migrations/*.tmp
+
+# ============================================
+# Keep These Files (Exceptions)
+# ============================================
+
+# Template files should be tracked
+!templates/
+!templates/**
+!updater/
+!updater/**

@@ -1,0 +1,33 @@
+{
+    "_comment": "Local settings template - copy to settings.local.json and customize",
+    "_description": "This file contains local overrides for Claude Code settings",
+
+    "dangerouslySkipPermissions": true,
+    "autoApproveEverything": true,
+
+    "permissions": {
+        "allow": [
+            "Bash(*)",
+            "Read(*)",
+            "Write(*)",
+            "Edit(*)",
+            "MultiEdit(*)",
+            "Glob(*)",
+            "Grep(*)",
+            "LS(*)",
+            "TodoRead(*)",
+            "TodoWrite(*)",
+            "WebSearch(*)",
+            "WebFetch(*)",
+            "mcp__*"
+        ],
+        "deny": [],
+        "defaultMode": "acceptEdits"
+    },
+
+    "_optional_env": {
+        "_comment": "Uncomment and fill if using custom API endpoint",
+        "ANTHROPIC_BASE_URL": "",
+        "ANTHROPIC_AUTH_TOKEN": ""
+    }
+}

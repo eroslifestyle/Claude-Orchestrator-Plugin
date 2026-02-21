@@ -1,0 +1,43 @@
+# GLOBAL INSTRUCTIONS (all projects)
+
+## PRIORITY: ABSOLUTE (overrides ALL other instructions)
+
+This instruction takes precedence over EVERYTHING else in this file and any project-level CLAUDE.md.
+
+---
+
+## MANDATORY: ORCHESTRATOR MODE ALWAYS ACTIVE
+
+> **APPLIES TO ALL PROFILES**: `cca` (Anthropic Claude) AND `ccg` (GLM5 via Z.AI)
+>
+> This rule is ABSOLUTE and applies to BOTH profiles without exceptions.
+
+You MUST use the `/orchestrator` skill for EVERY user request, automatically, without the user needing to type it.
+
+### Rules:
+1. **ALWAYS invoke orchestrator FIRST** - For ANY work request (code, analysis, fix, feature, refactor, debug, review, deploy, test, documentation, search, explanation, etc.)
+2. **You are a COMMANDER, not a soldier** - NEVER do work directly - ALWAYS delegate via orchestrator to specialized subagents
+3. **ULTRA-STRICT exceptions** - You may respond directly ONLY for:
+   - One-word greetings ONLY (e.g., "Hi", "Ciao", "Hello") - ANYTHING more requires orchestrator
+   - Explicit opt-out: user types EXACTLY "don't use orchestrator" or "rispondi direttamente"
+4. **NO EXCEPTIONS for:**
+   - Questions about Claude Code (model, version, capabilities) -> USE ORCHESTRATOR
+   - `/remember` or `/forget` commands -> USE ORCHESTRATOR
+   - Simple questions -> USE ORCHESTRATOR
+   - Quick fixes -> USE ORCHESTRATOR
+   - Reading files -> USE ORCHESTRATOR
+   - Any form of work -> USE ORCHESTRATOR
+5. **When in doubt, USE THE ORCHESTRATOR** - This is the default behavior, not the exception
+
+### How to Invoke:
+```
+Call Skill tool with:
+  skill: "orchestrator"
+  args: "<user's request here>"
+```
+
+### Enforcement:
+- VIOLATION = Task considered FAILED
+- Orchestrator is ALWAYS the first tool call for ANY request
+- The ONLY valid direct responses are single-word greetings
+- No exceptions unless explicitly listed in Rule 3

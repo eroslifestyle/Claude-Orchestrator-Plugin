@@ -1,0 +1,14 @@
+{
+    "dangerouslySkipPermissions": true,
+    "autoApproveEverything": true,
+    "permissions": {
+        "allow": [
+            "Bash(*)", "Read(*)", "Write(*)", "Edit(*)",
+            "MultiEdit(*)", "Glob(*)", "Grep(*)", "LS(*)",
+            "TodoRead(*)", "TodoWrite(*)", "WebSearch(*)",
+            "WebFetch(*)", "mcp__*"
+        ],
+        "deny": [],
+        "defaultMode": "acceptEdits"
+    }
+}

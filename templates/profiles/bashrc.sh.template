@@ -1,0 +1,201 @@
+#!/bin/bash
+# ====================================================================
+# Claude Code Dual Profile Management System - Linux/Mac
+# ====================================================================
+# Version: 5.0 - Manual VS Code Restart Only
+# Purpose: Switch between Anthropic (cca) and GLM5 (ccg) Claude Code profiles
+# ====================================================================
+
+# ====================================================================
+# CONFIGURATION - CUSTOMIZE THESE PATHS FOR YOUR SYSTEM
+# ====================================================================
+
+# Claude config directory
+CLAUDE_CONFIG_DIR="$HOME/.claude"
+SETTINGS_ANTHROPIC="$CLAUDE_CONFIG_DIR/settings-anthropic.json"
+SETTINGS_GLM="$CLAUDE_CONFIG_DIR/settings-glm.json"
+SETTINGS_ACTIVE="$CLAUDE_CONFIG_DIR/settings.json"
+
+# VS Code path - customize for your installation
+# Common locations:
+#   Linux: /usr/bin/code or /snap/bin/code
+#   Mac: /Applications/Visual Studio Code.app/Contents/Resources/app/bin/code
+VSCODE_EXE="code"
+
+# Claude executable path
+CLAUDE_EXE="$HOME/.local/bin/claude"
+
+# ====================================================================
+# Core Function: switch_claude_profile
+# ====================================================================
+switch_claude_profile() {
+    local profile="$1"
+    local restart="${2:-false}"
+
+    # Normalize profile name
+    profile=$(echo "$profile" | tr '[:upper:]' '[:lower:]')
+    [[ "$profile" == "anthropic" ]] && profile="cca"
+    [[ "$profile" == "glm" ]] && profile="ccg"
+
+    # Determine source file
+    local source_file=""
+    local profile_name=""
+
+    case "$profile" in
+        cca)
+            source_file="$SETTINGS_ANTHROPIC"
+            profile_name="Anthropic"
+            ;;
+        ccg)
+            source_file="$SETTINGS_GLM"
+            profile_name="GLM5"
+            ;;
+        *)
+            echo "[ERROR] Invalid profile: $profile (use: cca or ccg)"
+            return 1
+            ;;
+    esac
+
+    echo ""
+    echo "[switch_claude_profile] Switching to $profile_name profile..."
+
+    # Validate source file
+    if [[ ! -f "$source_file" ]]; then
+        echo "[ERROR] Source file not found: $source_file"
+        return 1
+    fi
+
+    # Step 1: Calculate source hash
+    echo "  Step 1/5: Calculating source hash..."
+    local source_hash=$(sha256sum "$source_file" 2>/dev/null | cut -d' ' -f1)
+
+    if [[ -z "$source_hash" ]]; then
+        echo "[ERROR] Failed to calculate source hash"
+        return 1
+    fi
+
+    # Step 2: Copy settings
+    echo "  Step 2/5: Copying settings file..."
+    cp "$source_file" "$SETTINGS_ACTIVE" 2>/dev/null
+
+    if [[ $? -ne 0 ]]; then
+        echo "[ERROR] Copy failed"
+        return 1
+    fi
+
+    # Step 3: Sync to disk
+    echo "  Step 3/5: Syncing to disk..."
+    sync
+
+    # Step 4: Verify hash
+    echo "  Step 4/5: Verifying hash..."
+    local dest_hash=$(sha256sum "$SETTINGS_ACTIVE" 2>/dev/null | cut -d' ' -f1)
+
+    if [[ "$dest_hash" != "$source_hash" ]]; then
+        echo "[ERROR] Hash mismatch!"
+        return 1
+    fi
+
+    echo "  Hash verified: ${dest_hash:0:16}..."
+
+    # Step 5: Restart VS Code if requested
+    if [[ "$restart" == "true" ]]; then
+        echo "  Step 5/5: Restarting VS Code..."
+        pkill -f "Visual Studio Code" 2>/dev/null || true
+        sleep 2
+        nohup "$VSCODE_EXE" > /dev/null 2>&1 &
+        echo "  VS Code restarted"
+    fi
+
+    echo ""
+    echo "[SUCCESS] $profile_name profile activated"
+    echo "  Active: $SETTINGS_ACTIVE"
+    echo ""
+}
+
+# ====================================================================
+# Verification Function: test_claude_profile
+# ====================================================================
+test_claude_profile() {
+    echo ""
+    echo "[test_claude_profile] Checking configuration..."
+
+    if [[ ! -f "$SETTINGS_ACTIVE" ]]; then
+        echo "[ERROR] settings.json not found!"
+        return 1
+    fi
+
+    local active_hash=$(sha256sum "$SETTINGS_ACTIVE" 2>/dev/null | cut -d' ' -f1)
+    local anthropic_hash=""
+    local glm_hash=""
+
+    [[ -f "$SETTINGS_ANTHROPIC" ]] && anthropic_hash=$(sha256sum "$SETTINGS_ANTHROPIC" 2>/dev/null | cut -d' ' -f1)
+    [[ -f "$SETTINGS_GLM" ]] && glm_hash=$(sha256sum "$SETTINGS_GLM" 2>/dev/null | cut -d' ' -f1)
+
+    echo ""
+    echo "Current Status:"
+    echo "  Config Dir: $CLAUDE_CONFIG_DIR"
+
+    if [[ "$active_hash" == "$anthropic_hash" ]]; then
+        echo "  Active Profile: ANTHROPIC (cca)"
+    elif [[ "$active_hash" == "$glm_hash" ]]; then
+        echo "  Active Profile: GLM5 (ccg)"
+    else
+        echo "  Active Profile: UNKNOWN or MODIFIED"
+    fi
+
+    echo ""
+}
+
+# ====================================================================
+# Alias Functions
+# ====================================================================
+cca() {
+    switch_claude_profile "cca" "false"
+}
+
+ccg() {
+    switch_claude_profile "ccg" "false"
+}
+
+cca_restart() {
+    switch_claude_profile "cca" "true"
+}
+
+ccg_restart() {
+    switch_claude_profile "ccg" "true"
+}
+
+claude() {
+    if [[ ! -f "$CLAUDE_EXE" ]]; then
+        echo "[ERROR] claude not found at: $CLAUDE_EXE"
+        return 1
+    fi
+
+    # Detect active profile
+    local active_hash=$(sha256sum "$SETTINGS_ACTIVE" 2>/dev/null | cut -d' ' -f1)
+    local anthropic_hash=""
+    local glm_hash=""
+
+    [[ -f "$SETTINGS_ANTHROPIC" ]] && anthropic_hash=$(sha256sum "$SETTINGS_ANTHROPIC" 2>/dev/null | cut -d' ' -f1)
+    [[ -f "$SETTINGS_GLM" ]] && glm_hash=$(sha256sum "$SETTINGS_GLM" 2>/dev/null | cut -d' ' -f1)
+
+    local active_profile="Unknown"
+    [[ "$active_hash" == "$anthropic_hash" ]] && active_profile="Anthropic (cca)"
+    [[ "$active_hash" == "$glm_hash" ]] && active_profile="GLM5 (ccg)"
+
+    echo "[claude] Starting with active profile: $active_profile"
+
+    "$CLAUDE_EXE" "$@"
+}
+
+# ====================================================================
+# Display welcome message
+# ====================================================================
+if [[ -n "$PS1" ]]; then
+    echo ""
+    echo "[Claude Code Profile Manager v5.0]"
+    echo "  Commands: cca, ccg, cca_restart, ccg_restart, claude, test_claude_profile"
+    echo "  Use *_restart commands to auto-restart VS Code"
+    echo ""
+fi

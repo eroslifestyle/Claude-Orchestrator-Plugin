@@ -1,0 +1,926 @@
+{
+  "version": "7.0",
+  "updated": "2026-02-15T22:00:00Z",
+  "config": {
+    "failure_threshold": 5,
+    "cooldown_minutes": 10,
+    "timeout_seconds": 180,
+    "retry_attempts": 3,
+    "history_max_entries": 1000,
+    "history_retention_days": 30
+  },
+  "agents": {
+    "core/analyzer.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "core/coder.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "core/reviewer.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "core/documenter.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "core/system_coordinator.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "core/orchestrator.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/gui-super-expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/database_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/security_unified_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/integration_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/tester_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/mql_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/trading_strategy_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/architect_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/devops_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/languages_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/ai_integration_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/claude_systems_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/mobile_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/n8n_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/social_identity_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/reverse_engineering_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/offensive_security_expert.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/mcp_design_specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/mcp_web_specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/mcp_ui_ux_specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/gui-layout-specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/db-query-optimizer.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/security-auth-specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/api-endpoint-builder.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/test-unit-specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/mql-optimization.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/trading-risk-calculator.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/mobile-ui-specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/n8n-workflow-builder.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/claude-prompt-optimizer.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/architect-design-specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/devops-pipeline-specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/languages-refactor-specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/ai-model-specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/social-oauth-specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    },
+    "experts/L2/mcp_vision_specialist.md": {
+      "status": "healthy",
+      "failures": 0,
+      "last_failure": null,
+      "blacklisted_until": null,
+      "metrics": {
+        "tasks_total": 0,
+        "tasks_successful": 0,
+        "tasks_failed": 0,
+        "tasks_cancelled": 0,
+        "avg_duration_seconds": 0.0,
+        "total_duration_seconds": 0.0,
+        "last_task_timestamp": null,
+        "first_task_timestamp": null
+      },
+      "token_usage": {
+        "haiku": {"total": 0, "last": null, "count": 0},
+        "sonnet": {"total": 0, "last": null, "count": 0},
+        "opus": {"total": 0, "last": null, "count": 0}
+      }
+    }
+  },
+  "fallback_chain": {
+    "L2_to_L1": {
+      "gui-layout-specialist": "gui-super-expert",
+      "db-query-optimizer": "database_expert",
+      "security-auth-specialist": "security_unified_expert",
+      "api-endpoint-builder": "integration_expert",
+      "test-unit-specialist": "tester_expert",
+      "mql-optimization": "mql_expert",
+      "trading-risk-calculator": "trading_strategy_expert",
+      "mobile-ui-specialist": "mobile_expert",
+      "n8n-workflow-builder": "n8n_expert",
+      "claude-prompt-optimizer": "claude_systems_expert",
+      "architect-design-specialist": "architect_expert",
+      "devops-pipeline-specialist": "devops_expert",
+      "languages-refactor-specialist": "languages_expert",
+      "ai-model-specialist": "ai_integration_expert",
+      "social-oauth-specialist": "social_identity_expert",
+      "mcp_vision_specialist": "mcp_ui_ux_specialist"
+    },
+    "ultimate_fallback": "core/coder.md"
+  },
+  "metrics": {
+    "total_agents": 43,
+    "total_requests": 0,
+    "successful": 0,
+    "failed": 0,
+    "fallback_used": 0,
+    "circuit_breaks": 0
+  },
+  "history": []
+}
