@@ -1,0 +1,59 @@
+# Claude Orchestrator Plugin - .gitignore
+
+# Credentials and secrets (NEVER commit these)
+.credentials.json
+.env
+.env.*
+*.pem
+*.key
+
+# Sensitive data
+stats-cache.json
+history.jsonl
+
+# Cache directories
+paste-cache/
+debug/
+backups/
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.log
+temp_*
+NUL
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Node modules (if any JS tooling)
+node_modules/
+
+# OS generated files
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini

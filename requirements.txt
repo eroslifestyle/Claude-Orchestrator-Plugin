@@ -1,0 +1,42 @@
+# Claude Orchestrator Plugin - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+typing-extensions>=4.9.0  # Enhanced type hints for older Python versions
+
+# Logging and debugging
+colorlog>=6.8.0  # Colored logging output
+
+# Configuration management
+pydantic>=2.5.0  # Data validation and settings management
+pydantic-settings>=2.1.0  # Settings management with environment variables
+
+# CLI utilities
+rich>=13.7.0  # Rich text and beautiful formatting in terminal
+
+# JSON handling
+orjson>=3.9.0  # Fast JSON library (optional, fallback to stdlib json)
+
+# Async support (for MCP server)
+asyncio-compat>=0.1.0; python_version < "3.10"  # Async compatibility for older Python
+
+# Cross-platform path handling
+pathspec>=0.12.0  # Path pattern matching (like .gitignore)
+
+# Development dependencies (install with: pip install -r requirements.txt -r requirements-dev.txt)
+# These are separate to keep production dependencies minimal
+
+# Optional: Enhanced shell integration
+shellingham>=1.5.0  # Shell detection for better CLI integration
+
+# Optional: Progress bars and status
+tqdm>=4.66.0  # Progress bars for long operations
+
+# Optional: File watching (for development)
+watchdog>=3.0.0  # File system events monitoring
+
+# Testing (development only - use requirements-dev.txt)
+# pytest>=7.4.0
+# pytest-asyncio>=0.21.0
+# pytest-cov>=4.1.0
+# pytest-mock>=3.11.0

@@ -1,0 +1,101 @@
+{
+  "_comment": "Claude Orchestrator Plugin - Settings Template",
+  "_comment_version": "v10.2 - 2026-02-22",
+  "_comment_docs": "https://github.com/eroslifestyle/Claude-Orchestrator-Plugin",
+
+  "env": {
+    "_comment": "Enable Agent Teams feature for parallel multi-agent execution",
+    "_comment_usage": "Set to '1' to enable, omit or set to '0' to disable",
+    "_comment_restart": "Restart Claude Code after changing this setting",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+
+  "_merge_instructions": {
+    "scenario_1_new_install": {
+      "description": "If you have NO existing settings.json",
+      "steps": [
+        "1. Copy this file to ~/.claude/settings.json",
+        "2. Restart Claude Code"
+      ]
+    },
+
+    "scenario_2_existing_settings": {
+      "description": "If you already have a settings.json",
+      "steps": [
+        "1. Open your existing ~/.claude/settings.json",
+        "2. Add the 'env' block from this template",
+        "3. If 'env' already exists, merge the CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS key",
+        "4. Restart Claude Code"
+      ]
+    },
+
+    "scenario_3_merge_example": {
+      "description": "Example of merged settings",
+      "before": {
+        "permissions": {
+          "allow": ["Read", "Write", "Bash"]
+        },
+        "env": {
+          "SOME_OTHER_VAR": "value"
+        }
+      },
+      "after": {
+        "permissions": {
+          "allow": ["Read", "Write", "Bash"]
+        },
+        "env": {
+          "SOME_OTHER_VAR": "value",
+          "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+        }
+      }
+    }
+  },
+
+  "_mcp_plugins": {
+    "_comment": "MCP plugins are configured separately. See docs/mcp-integration.md",
+    "_anthropic_profile": {
+      "description": "Anthropic OAuth profile (cca) - has native web search/image analysis",
+      "plugins": ["canva", "slack", "firebase", "orchestrator-mcp"]
+    },
+    "_glm_profile": {
+      "description": "GLM5 via Z.AI profile (ccg) - requires plugins for web/image",
+      "plugins": ["web-reader", "web-search-prime", "canva", "slack", "firebase", "orchestrator-mcp", "zai-mcp-server", "4_5v_mcp"]
+    }
+  },
+
+  "_agent_teams_modes": {
+    "_comment": "Teammate mode is controlled via CLI flag, NOT settings.json",
+    "in-process": {
+      "description": "No tmux required, runs in same process",
+      "platform": "Windows (default), also available on macOS/Linux",
+      "flag": "--teammate-mode in-process"
+    },
+    "tmux": {
+      "description": "Split panes in terminal",
+      "platform": "macOS/Linux (requires tmux or iTerm2)",
+      "flag": "--teammate-mode tmux"
+    },
+    "auto": {
+      "description": "Auto-detect best mode",
+      "platform": "All platforms",
+      "flag": "--teammate-mode auto (default)"
+    }
+  },
+
+  "_troubleshooting": {
+    "agent_teams_not_working": [
+      "1. Verify this setting is in ~/.claude/settings.json",
+      "2. Restart Claude Code completely",
+      "3. Check with: /orchestrator health"
+    ],
+    "teammate_mode_issues": [
+      "On Windows: in-process mode is automatic, no flag needed",
+      "On macOS/Linux without tmux: use --teammate-mode in-process"
+    ],
+    "settings_not_applied": [
+      "Settings.json changes require Claude Code restart",
+      "Verify JSON syntax is valid (no trailing commas)",
+      "Check file is at correct location: ~/.claude/settings.json"
+    ]
+  }
+}

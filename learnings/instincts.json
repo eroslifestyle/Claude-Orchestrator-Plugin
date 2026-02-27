@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "instincts": [],
+  "metadata": {
+    "created": "2026-02-26",
+    "total_learned": 0,
+    "total_evolved": 0,
+    "last_evolution": null,
+    "format_note": "evolved_to must be array: [] or ['skill_id_1', 'skill_id_2']"
+  }
+}
