@@ -74,7 +74,7 @@ The **Claude Orchestrator Plugin** is a multi-agent orchestration system that tr
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/eroslifestyle/Claude-Orchestrator-Plugin/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/eroslifestyle/Claude-Orchestrator-Plugin/main/bootstrap-installer.ps1 | iex
 ```
 
 **macOS / Linux:**

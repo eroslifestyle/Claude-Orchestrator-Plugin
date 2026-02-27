@@ -780,14 +780,30 @@ function Install-ClaudeOrchestrator {
 #endregion
 
 #region Entry Point
+# Detect if running via download (irm | iex) to avoid closing PowerShell
+$script:IsDownloaded = $null -eq $PSScriptRoot -or $PSScriptRoot -eq ""
+
 try {
     $exitCode = Install-ClaudeOrchestrator
-    exit $exitCode
+
+    # Only exit if NOT running via download (to avoid closing PowerShell)
+    if (-not $script:IsDownloaded) {
+        exit $exitCode
+    }
+    # If downloaded, just return and let user see the output
+    Write-Host "`nPress any key to continue..." -ForegroundColor Gray
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 }
 catch {
     Write-Error "Unexpected error: $_"
     Write-Log "Unexpected error: $_" -Level "ERROR"
     Write-Log $_.ScriptStackTrace -Level "DEBUG"
-    exit 1
+
+    if (-not $script:IsDownloaded) {
+        exit 1
+    }
+
+    Write-Host "`nPress any key to continue..." -ForegroundColor Gray
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 }
 #endregion
