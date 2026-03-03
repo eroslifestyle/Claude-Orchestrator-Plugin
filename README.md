@@ -1,4 +1,4 @@
-# Claude Orchestrator Plugin V12.5.1
+# Claude Orchestrator Plugin V12.5.2
 
 A powerful multi-agent orchestration system for Claude Code with hierarchical command structure, parallel execution, intelligent cleanup, and 100% guaranteed fallback.
 
@@ -11,7 +11,7 @@ A powerful multi-agent orchestration system for Claude Code with hierarchical co
 |    O    O  R  R   C      H   H  E          S    T    R  R   A    A          |
 |     OOOO   R   R   CCCC  H   H  EEEEE  SSSS     T    R   R  A    A          |
 |                                                                              |
-|                   V12.5.1 - TMP PATTERNS - CLEAN STARTUP                     |
+|               V12.5.2 - CLEANUP ONLY AT END - CLEAN SESSION                  |
 |                                                                              |
 +==============================================================================+
 ```

@@ -1,6 +1,6 @@
 {
-  "version": "12.5.1",
-  "codename": "TMP PATTERNS",
+  "version": "12.5.2",
+  "codename": "CLEANUP ONLY AT END",
   "last_audit": "2026-03-03",
   "agents": {
     "total": 43,
@@ -25,16 +25,17 @@
   },
   "docs_files": 16,
   "components": {
-    "orchestrator": "V12.5.1 TMP PATTERNS",
+    "orchestrator": "V12.5.2 CLEANUP ONLY AT END",
     "rules_engine": "V1.0",
     "continuous_learning": "V1.0",
     "agent_teams": "V1.0",
     "process_manager": "V1.0",
-    "cleanup_system": "V2.0"
+    "cleanup_system": "V2.1"
   },
   "changelog": {
+    "v12.5.2": "Cleanup runs ONLY at session end (Step 11), never at startup. Removed STEP 0.6.",
     "v12.5.1": "Extended temp patterns: *.*.tmp.*, *.md.tmp.*, CLAUDE.md.tmp.*, *.py.tmp.*",
-    "v12.5": "Robust cleanup: STEP 0.6 startup, STEP 11.5 emergency, signal handlers",
+    "v12.5": "Robust cleanup: STEP 11.5 emergency, signal handlers",
     "v12.4": "Request pre-processing with prompt-engineering-patterns skill",
     "v12.3": "Skill integration with 31 skills catalog"
   }

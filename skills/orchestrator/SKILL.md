@@ -8,7 +8,7 @@ metadata:
   keywords: [orchestration, multi-agent, coordination, delegation]
 ---
 
-# ORCHESTRATOR V12.5.1 TMP PATTERNS
+# ORCHESTRATOR V12.5.2 CLEANUP ONLY AT END
 
 You are an orchestrator. You DELEGATE work to subagents via the Task tool OR coordinate Agent Teams. You NEVER do the work yourself.
 
@@ -99,75 +99,6 @@ Before any other step, detect the response language:
 **Se SEMPLICE:**
 - Salta il pre-processing
 - Continua direttamente con STEP 1: PATH CHECK
-
-### STEP 0.6: STARTUP CLEANUP (NEW)
-**Runs BEFORE any other step.** Delegates to `System Coordinator` (model: haiku).
-
-**Purpose:** Remove stale temp files from previous sessions (crash recovery).
-
-**Temp File Patterns (30+):**
-| Category | Patterns |
-|----------|----------|
-| **Generic** | `*.tmp`, `*.temp`, `temp_*`, `*_temp.*`, `*.bak`, `*.backup`, `*.old`, `*~` |
-| **Editor** | `*.swp`, `*.swo`, `*.swn` |
-| **OS** | `.DS_Store`, `Thumbs.db`, `desktop.ini`, `*.lnk` |
-| **Python** | `*.pyc`, `*.pyo`, `__pycache__/`, `.pytest_cache/`, `.mypy_cache/`, `*.egg-info/` |
-| **Claude** | `claude_*`, `*_claude_*`, `.claude/tmp/*`, `checkpoint_*.md` |
-| **Claude Extended** | `*.md.tmp.*`, `CLAUDE.md.tmp.*`, `*.py.tmp.*`, `*.*.tmp.*` |
-| **Logs** | `*.log.*`, `nohup.out`, `*.out` |
-| **Lock** | `*.pid`, `*.lock` (obsolete only) |
-| **Build** | `*.pyd`, `*.so` (in tmp dirs only) |
-
-**Execution:**
-```python
-# Pseudocode for System Coordinator
-import os
-import glob
-from pathlib import Path
-
-def startup_cleanup(project_path: str) -> dict:
-    patterns = [
-        # Generic temp files
-        "*.tmp", "*.temp", "temp_*", "*_temp.*",
-        "*.bak", "*.backup", "*.old", "*~",
-        # Editor files
-        "*.swp", "*.swo",
-        # Claude temp files
-        "claude_*", "*_claude_*",
-        # Claude Code extended temp patterns (with .tmp in middle of filename)
-        "*.*.tmp.*",      # Any file with .tmp followed by extension/numbers
-        "*.md.tmp.*",     # Markdown files with .tmp (e.g., CLAUDE.md.tmp.11724)
-        "*.py.tmp.*",     # Python files with .tmp
-        "CLAUDE.md.tmp.*", # Specific CLAUDE.md temp files
-        # Logs and locks
-        "*.log.*", "*.pid",
-    ]
-
-    deleted = []
-    errors = []
-
-    for pattern in patterns:
-        for file in Path(project_path).rglob(pattern):
-            try:
-                file.unlink()
-                deleted.append(str(file))
-            except Exception as e:
-                errors.append(f"{file}: {e}")
-
-    # Windows NUL deletion
-    if os.name == 'nt':
-        for nul in Path(project_path).rglob("NUL"):
-            try:
-                ctypes.windll.kernel32.DeleteFileW(r'\\?\' + str(nul))
-                deleted.append(str(nul))
-            except: pass
-
-    return {"deleted": deleted, "errors": errors, "count": len(deleted)}
-```
-
-**Timeout:** 30 seconds (graceful exit if exceeded)
-
-**Report:** `STARTUP_CLEANUP: files_removed=N | errors=E`
 
 ### STEP 1: PATH CHECK
 If files not in current working directory:
@@ -832,7 +763,7 @@ More examples: [examples.md](docs/examples.md)
 
 | Version | Date | Changes |
 |---------|------|---------|
-| V12.5.1 TMP PATTERNS | 2026-03-03 | Added extended temp patterns: `*.*.tmp.*`, `*.md.tmp.*`, `CLAUDE.md.tmp.*`, `*.py.tmp.*`. Now handles Claude Code temp files with .tmp in middle of filename (e.g., CLAUDE.md.tmp.11724.1772521559600). Updated STEP 0.6 table, STEP 11.5 emergency patterns, and cleanup skill. |
+| V12.5.2 CLEANUP ONLY AT END | 2026-03-03 | Removed STEP 0.6 STARTUP CLEANUP - cleanup runs ONLY at session end (Step 11), never at startup. Extended temp patterns in Step 11. Clean startup. Clean session. Clean exit. |
 | V12.5 ROBUST CLEANUP | 2026-03-03 | Added STEP 0.6 STARTUP CLEANUP with 25+ temp patterns. Enhanced STEP 11 with recursive scan, logging, timeout handling. New STEP 11.5 EMERGENCY CLEANUP with signal handlers. Updated SESSION HOOKS with cleanup hooks. Fixes: orphan temp files accumulation. |
 | V12.4 REQUEST PRE-PROCESSING | 2026-03-03 | Added STEP 0.5 for request pre-processing with complexity evaluation. New skill: prompt-engineering-patterns for expanding vague requests. Skills catalog: 31 total. |
 | V12.3 SKILL INTEGRATION | 2026-03-03 | Added python-performance-optimization to catalog (30 skills), explicit skill mapping in slash commands, Skill tool invocation in Step 9, new SKILL INVOCATION section documenting skill vs agent usage patterns. |
@@ -855,5 +786,5 @@ More examples: [examples.md](docs/examples.md)
 
 ---
 
-**ORCHESTRATOR V12.5.1 TMP PATTERNS**
-*Clean startup. Clean session. Clean exit.*
+**ORCHESTRATOR V12.5.2 CLEANUP ONLY AT END**
+*Clean session. Clean exit.*
