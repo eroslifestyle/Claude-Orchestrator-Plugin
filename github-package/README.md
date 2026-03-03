@@ -25,7 +25,7 @@ A powerful multi-agent orchestration system for Claude Code with hierarchical co
 - **Intelligent Model Selection** - Haiku/Sonnet/Opus based on task complexity
 - **Auto-Execute Mode** - No confirmation needed, immediate action
 - **Request Pre-Processing** - Automatic complexity evaluation and expansion
-- **Robust Cleanup System** - Startup + Session + Emergency cleanup
+- **Robust Cleanup System** - Session-end cleanup only
 - **Process Manager** - Centralized process spawning with guaranteed cleanup
 - **Rules Engine** - Context-aware rule injection per task
 
