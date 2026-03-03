@@ -11,7 +11,7 @@ A powerful multi-agent orchestration system for Claude Code with hierarchical co
 |    O    O  R  R   C      H   H  E          S    T    R  R   A    A          |
 |     OOOO   R   R   CCCC  H   H  EEEEE  SSSS     T    R   R  A    A          |
 |                                                                              |
-|               V12.5.2 - CLEANUP ONLY AT END - CLEAN SESSION                  |
+|               V12.5.2 - CLEANUP ONLY AT END - NO STARTUP CLEANUP             |
 |                                                                              |
 +==============================================================================+
 ```
@@ -25,13 +25,19 @@ A powerful multi-agent orchestration system for Claude Code with hierarchical co
 - **Intelligent Model Selection** - Haiku/Sonnet/Opus based on task complexity
 - **Auto-Execute Mode** - No confirmation needed, immediate action
 - **Request Pre-Processing** - Automatic complexity evaluation and expansion
-- **Robust Cleanup System** - Startup + Session + Emergency cleanup
+- **Robust Cleanup System** - Session-end cleanup only (no startup cleanup)
 - **Process Manager** - Centralized process spawning with guaranteed cleanup
 - **Rules Engine** - Context-aware rule injection per task
 
-## What's New in V12.5.1
+## What's New in V12.5.2
 
-### TMP PATTERNS (March 3, 2026)
+### CLEANUP ONLY AT END (March 3, 2026)
+- **REMOVED:** STEP 0.6 STARTUP CLEANUP - No cleanup at session start
+- **CHANGED:** Cleanup runs ONLY at STEP 11 (session end), never during startup
+- **RATIONALE:** Startup cleanup could interfere with legitimate temp files in use
+- **CLEAN:** Session starts clean, cleanup happens when session ends
+
+### V12.5.1 TMP PATTERNS (March 3, 2026)
 - **Extended temp patterns** for Claude Code files:
   - `*.*.tmp.*` - Any file with .tmp in middle
   - `*.md.tmp.*` - Markdown temp files
@@ -40,10 +46,10 @@ A powerful multi-agent orchestration system for Claude Code with hierarchical co
 - **Comprehensive cleanup** of orphan temp files
 
 ### V12.5 ROBUST CLEANUP (March 3, 2026)
-- **STEP 0.6 STARTUP CLEANUP** - Removes stale temp files on session start
 - **STEP 11.5 EMERGENCY CLEANUP** - Signal handlers for crash recovery
 - **25+ temp patterns** - Covers generic, editor, OS, Python, Claude files
 - **Windows Job Objects** - Guaranteed process tree cleanup
+- **NOTE:** Cleanup runs at session end only (Step 11), not at startup
 
 ### V12.4 REQUEST PRE-PROCESSING (March 3, 2026)
 - **NEW Skill**: `prompt-engineering-patterns` for request optimization
@@ -62,7 +68,7 @@ A powerful multi-agent orchestration system for Claude Code with hierarchical co
 ```
                        +---------------------+
                        |    ORCHESTRATOR     |
-                       |   V12.5.1           |
+                       |   V12.5.2           |
                        |  (SUPREME COMMAND)  |
                        +---------+-----------+
                                  |
@@ -265,13 +271,18 @@ LEVEL 6: ORCHESTRATOR DIRECT
 
 ## Changelog
 
+### V12.5.2 CLEANUP ONLY AT END (March 3, 2026)
+- **REMOVED:** STEP 0.6 STARTUP CLEANUP
+- **CHANGED:** Cleanup runs ONLY at session end (Step 11)
+- **RATIONALE:** Startup cleanup could interfere with legitimate temp files
+
 ### V12.5.1 TMP PATTERNS (March 3, 2026)
 - **NEW:** Extended temp patterns for Claude Code files
 - **FIX:** Cleanup of orphan temp files (CLAUDE.md.tmp.*)
 - **IMPROVED:** 25+ temp patterns in cleanup system
 
 ### V12.5 ROBUST CLEANUP (March 3, 2026)
-- **NEW:** STEP 0.6 STARTUP CLEANUP
+- **CHANGED:** Cleanup moved to session end only (Step 11)
 - **NEW:** STEP 11.5 EMERGENCY CLEANUP with signal handlers
 - **NEW:** Process Manager for centralized process spawning
 - **IMPROVED:** Windows Job Objects support
@@ -311,6 +322,6 @@ Created by [eroslifestyle](https://github.com/eroslifestyle)
 
 **Remember:**
 - Orchestrator commands, agents execute
-- Clean startup. Clean session. Clean exit.
+- Clean startup. Clean session. Cleanup only at end.
 - 43 agents ready to command
 - 31 skills ready to invoke
