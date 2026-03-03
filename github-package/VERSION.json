@@ -1,6 +1,6 @@
 {
   "version": "12.5.2",
-  "codename": "CLEANUP ONLY AT END",
+  "codename": "Session End Cleanup",
   "last_audit": "2026-03-03",
   "agents": {
     "total": 43,
@@ -25,7 +25,7 @@
   },
   "docs_files": 16,
   "components": {
-    "orchestrator": "V12.5.2 CLEANUP ONLY AT END",
+    "orchestrator": "V12.5.2",
     "rules_engine": "V1.0",
     "continuous_learning": "V1.0",
     "agent_teams": "V1.0",

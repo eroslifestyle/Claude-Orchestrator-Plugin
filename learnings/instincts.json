@@ -64,11 +64,26 @@
       "source": "TelegramCopy GUI i18n migration - 12 file in parallelo",
       "created": "2026-03-03",
       "tags": ["parallelism", "migration", "efficiency"]
+    },
+    {
+      "pattern_id": "windows_utf8_encoding_fix",
+      "description": "Fix UnicodeEncodeError su Windows console che usa cp1252 di default",
+      "steps": [
+        "1. Aggiungere fix all'inizio di OGNI entry point (dopo import sys, prima di logging)",
+        "2. Pattern: if sys.platform == 'win32': sys.stdout.reconfigure(encoding='utf-8')",
+        "3. Applicare anche a sys.stderr per errori con emoji",
+        "4. Usare try/except e hasattr() per compatibilita Python",
+        "5. Verificare TUTTI gli entry point: main.py, run.py, launcher.py, gui/run_*.py"
+      ],
+      "confidence": 0.3,
+      "source": "TelegramCopy V2.2.7 - Fix per emoji (U+2705) nei log",
+      "created": "2026-03-03",
+      "tags": ["debugging", "windows", "encoding", "unicode"]
     }
   ],
   "metadata": {
     "created": "2026-02-26",
-    "total_learned": 4,
+    "total_learned": 5,
     "total_evolved": 0,
     "last_evolution": null,
     "format_note": "evolved_to must be array: [] or ['skill_id_1', 'skill_id_2']"

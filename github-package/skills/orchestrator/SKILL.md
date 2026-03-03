@@ -8,7 +8,7 @@ metadata:
   keywords: [orchestration, multi-agent, coordination, delegation]
 ---
 
-# ORCHESTRATOR V12.5.2 CLEANUP ONLY AT END
+# ORCHESTRATOR V12.5.2
 
 You are an orchestrator. You DELEGATE work to subagents via the Task tool OR coordinate Agent Teams. You NEVER do the work yourself.
 
@@ -763,7 +763,7 @@ More examples: [examples.md](docs/examples.md)
 
 | Version | Date | Changes |
 |---------|------|---------|
-| V12.5.2 CLEANUP ONLY AT END | 2026-03-03 | Removed STEP 0.6 STARTUP CLEANUP - cleanup runs ONLY at session end (Step 11), never at startup. Extended temp patterns in Step 11. Clean startup. Clean session. Clean exit. |
+| V12.5.2 | 2026-03-03 | Cleanup runs only at session end (Step 11), never at startup. Extended temp patterns. Clean session. Clean exit. |
 | V12.5 ROBUST CLEANUP | 2026-03-03 | Added STEP 0.6 STARTUP CLEANUP with 25+ temp patterns. Enhanced STEP 11 with recursive scan, logging, timeout handling. New STEP 11.5 EMERGENCY CLEANUP with signal handlers. Updated SESSION HOOKS with cleanup hooks. Fixes: orphan temp files accumulation. |
 | V12.4 REQUEST PRE-PROCESSING | 2026-03-03 | Added STEP 0.5 for request pre-processing with complexity evaluation. New skill: prompt-engineering-patterns for expanding vague requests. Skills catalog: 31 total. |
 | V12.3 SKILL INTEGRATION | 2026-03-03 | Added python-performance-optimization to catalog (30 skills), explicit skill mapping in slash commands, Skill tool invocation in Step 9, new SKILL INVOCATION section documenting skill vs agent usage patterns. |
@@ -786,5 +786,5 @@ More examples: [examples.md](docs/examples.md)
 
 ---
 
-**ORCHESTRATOR V12.5.2 CLEANUP ONLY AT END**
+**ORCHESTRATOR V12.5.2**
 *Clean session. Clean exit.*

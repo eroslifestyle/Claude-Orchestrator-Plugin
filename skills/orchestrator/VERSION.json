@@ -10,7 +10,7 @@
     ],
     "installed": "12.5.2",
     "installDate": "2026-03-03T00:00:00+01:00",
-    "changelog": "V12.5.2 CLEANUP ONLY AT END - Cleanup runs only at session end (Step 11), never at startup",
+    "changelog": "V12.5.2 - Cleanup runs only at session end (Step 11), never at startup",
     "channel": "stable",
     "lastCheck": null,
     "updateAvailable": false
